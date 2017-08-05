@@ -1,0 +1,8 @@
+# mysql connection setting
+DATABASE:
+  ENGINE  :   django.db.backends.mysql
+  DBNAME  :   test
+  USER    :   portal_dev
+  PASSWD  :   nsf0cus
+  HOST    :   10.5.1.0
+  PORT    :   3306

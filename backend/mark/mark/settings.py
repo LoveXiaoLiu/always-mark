@@ -1,3 +1,4 @@
+# coding:utf-8
 """
 Django settings for mark project.
 
@@ -14,6 +15,12 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Extract settings from config.yaml
+import yaml
+
+with open(os.path.join(BASE_DIR, 'config.yaml')) as conf_file:
+    config = yaml.safe_load(conf_file)
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,6 +45,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    'rest_framework',
     'showtime',
 )
 
@@ -78,8 +86,12 @@ WSGI_APPLICATION = 'mark.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': config['DATABASE']['ENGINE'],
+        'NAME': config['DATABASE']['DBNAME'],
+        'USER': config['DATABASE']['USER'],
+        'PASSWORD': config['DATABASE']['PASSWD'],
+        'HOST': config['DATABASE']['HOST'],
+        'PORT': config['DATABASE']['PORT'],
     }
 }
 
