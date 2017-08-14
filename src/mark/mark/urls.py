@@ -27,5 +27,7 @@ urlpatterns = patterns(
     url(
         r'', 
         include('showtime.urls'),
-    )
+    ),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', include(admin.site.urls)),
 )
