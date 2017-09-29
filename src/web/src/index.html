@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
     <title>便捷书签</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/mycss.css" />
 </head>
-<body>
+<body ng-controller="myCtrl">
     <div>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -30,7 +30,7 @@
                     <div class="input-group input-group-lg">
                       <input type="text" class="form-control" placeholder="Search for...">
                       <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">搜一下!</button>
+                        <button class="btn btn-default" type="button">搜一下</button>
                       </span>
                     </div><!-- /input-group -->
                 </div><!-- /.col-lg-4 -->
@@ -38,33 +38,27 @@
             
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <span class="label label-default">python</span>
-                    <span class="label label-primary">shell</span>
-                    <span class="label label-success">网络</span>
-                    <span class="label label-info">网站开发</span>
-                    <span class="label label-warning">Linux</span>
-                    <span class="label label-danger">常用工具</span>
+                    <ul class="list-inline">
+                        <div ng-repeat="lab in labs" class="tags">
+                            <li class="label label-{{ colorr[$index%6] }}">{{ lab }}</li>
+                        </div>
+                    </ul>
                 </div>
             </div><!-- 标签结束 -->
         </div><!-- search结束 -->
-        <div class="container-fluid  col-md-offset-1" style="margin-top:30px;">
-            <div class="row">
-                <div class="col-md-1">
-                    <h3><span><p class="label label-default label-lg">python</p></span></h3>
+        <div ng-repeat="(tag_key, marks_value) in marks">
+            <div class="container-fluid  col-md-offset-1" style="margin-top:30px;">
+                <div class="row">
+                    <div class="col-md-1">
+                        <h3><span><p class="label label-default label-lg">{{ tag_key }}</p></span></h3>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-10 markitem">
-                    <span class="btn btn-default">
-                        <a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=15788">eval用法三例,与大家分享,很有用o !-Shell-ChinaUnix.net</a>
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-10 markitem">
-                    <span class="btn btn-default">
-                        <a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=15788">linux服务器WEB环境一键安装包</a>
-                    </span>
+                <div ng-repeat="item in marks_value" class="row">
+                    <div class="col-md-10 markitem">
+                        <span class="btn btn-default">
+                            <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div><!-- marklist结束 -->

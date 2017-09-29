@@ -2,11 +2,17 @@
 * @Author: caoshuai
 * @Date:   2017-09-29 11:51:56
 * @Last Modified by:   caoshuai
-* @Last Modified time: 2017-09-29 16:05:32
+* @Last Modified time: 2017-09-29 17:20:55
 */
 
-a:link {
+a {
+    text-decoration: none;
+}
+
+a:link,
+a:visited {
     color: #808080;
+    text-decoration: none;
 }
 
 a:hover {
@@ -31,4 +37,9 @@ a:hover {
 .copyright-text {
     float: left;
     line-height: 65
+}
+
+.tags {
+    margin: 5px;
+    float: left;
 }
