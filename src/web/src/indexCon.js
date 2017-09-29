@@ -2,32 +2,88 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   caoshuai
-* @Last Modified time: 2017-09-27 20:20:29
+* @Last Modified time: 2017-09-28 20:10:21
 */
 
-// require.config({
-//     baseUrl : 'js',
-//     paths : {
-//         pb : '../lib'
-//     },
-//     shim : {
-//         'world' : {
-//             deps : ['animalWorld'],
-//             exports : 'world'
-//         }
-//     }
-// });
+var app = angular.module('myApp', []);
 
-
-// require(['cat', 'dog', 'world'], function(cat, dog, world) {
-//     world.world();
-//     cat.say();
-//     dog.say();
-// });
-
-
-function HelloA($scope) {
-    $scope.greeting = {
-        text : "heelo"
-    };
-};
+app.controller('myCtrl', ['$scope', function($scope){
+    $scope.marks = [
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        },
+        {
+            name : "python django",
+            url : "https://www.baidu.com"
+        }
+    ];
+}]);

@@ -1,0 +1,25 @@
+/* 
+* @Author: caoshuai
+* @Date:   2017-09-29 11:51:56
+* @Last Modified by:   caoshuai
+* @Last Modified time: 2017-09-29 13:11:00
+*/
+
+a:link {
+    color: #808080;
+}
+
+a:hover {
+    font-size: 16px;
+    text-decoration: none;
+    color: #FF3333;
+}
+
+.markitem {
+    white-space: nowrap;
+    /*word-wrap: break-word;*/
+    /*word-break: break-all;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+}
