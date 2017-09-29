@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-29 11:51:56
 * @Last Modified by:   caoshuai
-* @Last Modified time: 2017-09-29 13:11:00
+* @Last Modified time: 2017-09-29 16:05:32
 */
 
 a:link {
@@ -22,4 +22,13 @@ a:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     margin-bottom: 10px;
+}
+
+.copyright {
+    padding-top: 15px;
+}
+
+.copyright-text {
+    float: left;
+    line-height: 65
 }
