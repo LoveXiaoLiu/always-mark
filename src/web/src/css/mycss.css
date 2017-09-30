@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-29 11:51:56
 * @Last Modified by:   caoshuai
-* @Last Modified time: 2017-09-29 17:20:55
+* @Last Modified time: 2017-09-30 17:47:16
 */
 
 a {
@@ -16,7 +16,7 @@ a:visited {
 }
 
 a:hover {
-    font-size: 16px;
+    font-size: 15px;
     text-decoration: none;
     color: #FF3333;
 }
@@ -42,4 +42,13 @@ a:hover {
 .tags {
     margin: 5px;
     float: left;
+}
+
+.cancle-a-style {
+    text-decoration: none;
+    color: #fff;
+}
+
+.mynav {
+    height: 60px;
 }
