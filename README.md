@@ -8,14 +8,12 @@
 
 The file starts with the following text:
 
-``` HTML
     <!DOCTYPE NETSCAPE-Bookmark-file-1>
     <!--This is an automatically generated file.
     It will be read and overwritten.
     Do Not Edit! -->
     <Title>Bookmarks</Title>
     <H1>Bookmarks</H1>
-```
 
 The rest of the file is as follows:
 ```html
