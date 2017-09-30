@@ -8,16 +8,18 @@
 
 The file starts with the following text:
 
+```html
     <!DOCTYPE NETSCAPE-Bookmark-file-1>
     <!--This is an automatically generated file.
     It will be read and overwritten.
     Do Not Edit! -->
     <Title>Bookmarks</Title>
     <H1>Bookmarks</H1>
+```
 
 The rest of the file is as follows:
 ```html
- <DL>
+    <DL>
     {item}
     {item}
     {item}
@@ -32,7 +34,6 @@ An item may be a subfolder, shortcut, feed, Web Slice, or icon.
 If {item} refers to a subfolder, it is:
 
 ```html
-
     <DT><H3 FOLDED ADD_DATE="{date}">{title}</H3>
     <DL><p>
         {item}
@@ -54,26 +55,27 @@ If {item} refers to a shortcut, it is:
 If {item} refers to a feed, it is:
 
 ```html
-FEED="true"
-FEEDURL="href... "
+    FEED="true"
+    FEEDURL="href... "
 ```
 
 If {item} refers to a Web Slice, it is:
 
 ```html
-WEBSLICE="true"
-ISLIVEPREVIEW="true"
+    WEBSLICE="true"
+    ISLIVEPREVIEW="true"
 
-PREVIEWSIZE="w x h"
+    PREVIEWSIZE="w x h"
 ```
 
 If {item} refers to an icon, it is:
 
 ```html
-{item}
+    {item}
 
-ICON_URI="href... "
+    ICON_URI="href... "
 ```
 
 **Note**
-Throughout this file format definition, {date} is a decimal integer that represents the number of seconds elapsed since midnight January 1, 1970.
+
++ Throughout this file format definition, {date} is a decimal integer that represents the number of seconds elapsed since midnight January 1, 1970.
