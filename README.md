@@ -8,7 +8,9 @@
 
 The file starts with the following text:
 
->   <!DOCTYPE NETSCAPE-Bookmark-file-1>
+><!DOCTYPE NETSCAPE-Bookmark-file-1>
+
+
     <!--This is an automatically generated file.
     It will be read and overwritten.
     Do Not Edit! -->
