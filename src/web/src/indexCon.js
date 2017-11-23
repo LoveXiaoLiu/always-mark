@@ -1,13 +1,13 @@
 /* 
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
-* @Last Modified by:   caoshuai
-* @Last Modified time: 2017-09-30 16:02:12
+* @Last Modified by:   anchen
+* @Last Modified time: 2017-11-21 20:59:15
 */
 
 var app = angular.module('myApp', []);
 
-app.controller('myCtrl', ['$scope', function($scope){
+app.controller('myCtrl', ['$scope', '$http', function($scope, $http){
 
     $scope.labs = ['RFS',
                    'github-blog',
@@ -30,6 +30,15 @@ app.controller('myCtrl', ['$scope', function($scope){
                    '常用工具',
                    '虚拟机'
     ]
+
+    var apiurl = '/get_tags/';
+
+    $http.get({
+        url    : apiurl,
+        method : 'GET',
+    }).success(function (response, header, config, status) {
+        console.log(response)
+    })
 
     $scope.colorr = {
         0 : "primary",
