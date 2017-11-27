@@ -1,0 +1,80 @@
+#! /bin/bash
+# Comments to support chkconfig on Linux
+# chkconfig: 35 85 15
+# description: uwsgi is an HTTP(S) server, HTTP(S) reverse
+#
+# author     mail@zhaoyanan.cn
+#
+# chmod +x /etc/rc.d/init.d/uwsgi
+# chkconfig --add uwsgi
+# chkconfig --level 2345 uwsgi on
+#
+# Change History:
+# date        author          note
+# 2016/11/16  mail@zhaoyanan.cn  create, refer to nginx, and http://uwsgi-docs.readthedocs.io/en/latest/Management.html
+ 
+set -e
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DESC="uwsgi daemon"
+NAME=uwsgi
+#DAEMON=/usr/bin/$NAME
+DAEMON=/opt/caoshuai/ENV_GRASS/bin/uwsgi
+SCRIPTNAME=/etc/init.d/$NAME
+#CONFFILE=/opt/nginx/conf/uwsgi.ini
+CONFFILE=/opt/backend/uwsgi.ini
+PIDFILE=/var/run/uwsgi.pid
+ 
+test -x $DAEMON || exit 0
+ 
+d_start(){
+    $DAEMON --ini $CONFFILE || echo -n " already running"
+}
+ 
+d_stop() {
+    $DAEMON --stop $PIDFILE || echo -n " not running"
+}
+ 
+d_reload() {
+    $DAEMON --reload $PIDFILE || echo -n " counld not reload"
+}
+ 
+d_freload() {
+    $DAEMON --die-on-term $PIDFILE || echo -n " counld not force reload"
+}
+ 
+case "$1" in
+start)
+    echo -n "Starting $DESC:$NAME"
+    d_start
+    echo "."
+;;
+stop)
+    echo -n "Stopping $DESC:$NAME"
+    d_stop
+    echo "."
+;;
+reload)
+    echo -n "Reloading $DESC configuration..."
+    d_reload
+    echo "reloaded."
+;;
+force_reload)
+    echo -n "The official provision of the parameters, tested and found not to support..."
+    # d_freload
+    # echo "force reloaded."
+    echo "."
+;;
+restart)
+    echo -n "Restarting $DESC: $NAME"
+    d_stop
+    sleep 2
+    d_start
+    echo "."
+;;
+*)
+    echo "Usage: $SCRIPTNAME {start|stop|restart|reload|force_reload}" >&2
+    exit 3
+;;
+esac
+ 
+exit 0
