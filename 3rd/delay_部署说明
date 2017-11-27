@@ -1,0 +1,6 @@
+创建软硬件：
+	前端代码：ln -s /home/always-mark/src/web/src /var/www/html
+	后端代码：ln -s /home/always-mark/src/backend /opt/backend
+	uwsgi注册为服务：ln -s /home/always-mark/3rd/uwsgi /etc/init.d/uwsgi
+			 chmod +x /home/always-mark/3rd/uwsgi
+	nginx虚拟站点配置文件：ln -s /home/always-mark/3rd/default /etc/nginx/sites-enabled/default
