@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-11-21 20:59:15
+* @Last Modified time: 2017-11-27 19:51:04
 */
 
 var app = angular.module('myApp', []);
@@ -32,8 +32,9 @@ app.controller('myCtrl', ['$scope', '$http', function($scope, $http){
     ]
 
     var apiurl = '/get_tags/';
+    console.log(apiurl)
 
-    $http.get({
+    $http({
         url    : apiurl,
         method : 'GET',
     }).success(function (response, header, config, status) {

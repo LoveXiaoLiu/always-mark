@@ -50,13 +50,13 @@
             <div class="container-fluid  col-md-offset-1" style="margin-top:30px;">
                 <div class="row">
                     <div class="col-md-1" id="{{ tag_key }}">
-                        <h3><span><p class="label label-default label-lg">{{ tag_key }}</p></span></h3>
+                        <h3><span><p ng-bind="tag_key" class="label label-default label-lg"></p></span></h3>
                     </div>
                 </div>
                 <div ng-repeat="item in marks_value" class="row">
                     <div class="col-md-10 markitem">
                         <span class="btn btn-default">
-                            <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+                            <a href="{{ item.url }}" ng-bind="item.name" target="_blank"></a>
                         </span>
                     </div>
                 </div>
