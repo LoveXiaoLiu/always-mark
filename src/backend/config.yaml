@@ -1,0 +1,8 @@
+# mysql connection setting
+DATABASE:
+  ENGINE  :   django.db.backends.mysql
+  DBNAME  :   mark
+  USER    :   grass
+  PASSWD  :   Gra55
+  HOST    :   39.106.40.97
+  PORT    :   3306

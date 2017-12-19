@@ -1,0 +1,54 @@
+/* 
+* @Author: caoshuai
+* @Date:   2017-09-29 11:51:56
+* @Last Modified by:   caoshuai
+* @Last Modified time: 2017-09-30 17:47:16
+*/
+
+a {
+    text-decoration: none;
+}
+
+a:link,
+a:visited {
+    color: #808080;
+    text-decoration: none;
+}
+
+a:hover {
+    font-size: 15px;
+    text-decoration: none;
+    color: #FF3333;
+}
+
+.markitem {
+    white-space: nowrap;
+    /*word-wrap: break-word;*/
+    /*word-break: break-all;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    padding-top: 15px;
+}
+
+.copyright-text {
+    float: left;
+    line-height: 65
+}
+
+.tags {
+    margin: 5px;
+    float: left;
+}
+
+.cancle-a-style {
+    text-decoration: none;
+    color: #fff;
+}
+
+.mynav {
+    height: 60px;
+}
