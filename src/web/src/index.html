@@ -36,7 +36,7 @@
                 </div><!-- /.col-lg-4 -->
             </div><!-- search框结束 -->
             
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <ul class="list-inline">
                         <div ng-repeat="lab in labs" class="tags">
@@ -44,9 +44,27 @@
                         </div>
                     </ul>
                 </div>
-            </div><!-- 标签结束 -->
+            </div> --><!-- 标签结束 -->
         </div><!-- search结束 -->
-        <div ng-repeat="(tag_key, marks_value) in marks">
+        <div class="container-fluid">
+            <div class="col-md-2">
+                <ul class="nav nav-pills nav-stacked" ng-repeat="lab in labs">
+                    <li role="presentation"><a href="#{{lab}}">{{lab}}</a></li>
+                </ul>
+            </div> <!-- tag标签页 -->
+            <div class="col-md-10">
+                <div ng-repeat="(tag_key, marks_value) in marks">
+                    <div ng-repeat="item in marks_value" class="row" id="{{ tag_key }}">
+                        <div class="col-md-10 markitem">
+                            <span class="btn btn-default">
+                                <a href="{{ item.url }}" ng-bind="item.name" target="_blank"></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- bookmarklist -->
+        </div>
+        <!-- <div ng-repeat="(tag_key, marks_value) in marks">
             <div class="container-fluid  col-md-offset-1" style="margin-top:30px;">
                 <div class="row">
                     <div class="col-md-1" id="{{ tag_key }}">
@@ -61,8 +79,10 @@
                     </div>
                 </div>
             </div>
-        </div><!-- marklist结束 -->
+        </div> --><!-- marklist结束 -->
+
     </div><!-- content结束 -->
+
     <div>
         <nav class="navbar navbar-default navbar-fixed-bottom">
             <div class="container-fluid">
