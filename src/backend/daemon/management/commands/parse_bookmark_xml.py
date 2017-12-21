@@ -12,6 +12,7 @@ from django.core.management.base import BaseCommand
 logger = getLogger("default")
 
 PARSE_ENGINE = "html5lib"
+ROOT_LIST_KEY = "root_list"
 
 class Command(BaseCommand):
     """parse html"""
@@ -50,17 +51,67 @@ def run(htmlfile):
         head = bs_obj.head
         body = bs_obj.body
 
-        dl = body.dl
+        sons = body.children
 
-        parse_dl(dl.children)
+        ret = {}
+        key = "Bookmarks"
+        try:
+            while True:
+                nt = sons.next()
+                if nt.name == 'h1':
+                    key = nt.string if nt.string
+                    ret[key] = {}
+                elif nt.name == 'dl':
+                    # parse_dl返回一个字典
+                    ret[key] = parse_dl(nt)
 
-        parse_dt()
+        except StopIteration:
+            logger.info("body iter end")
+
+    print ret
+
 
     logger.info("end to parse html file ......")
 
-def parse_dl(dl_iter):
+def parse_dl(dl_obj):
+    dl_ret = {
+        ROOT_LIST_KEY : []
+    }
+    sons = dl_obj.children
     try:
         while True:
-            
+            nt = sons.next()
+            if nt.name == 'dt':
+                # 返回两种类型，list or dict
+                dt_data = parse_dt(nt)
+                if isinstance(dt_data, list):
+                    dl_ret[ROOT_LIST_KEY] = dl_ret[ROOT_LIST_KEY] + dt_data
+                elif isinstance(dt_data, dict):
+                    dl_ret.update(dt_data)
+
     except StopIteration:
-        logger.info("iteration end")
+        logger.info("body iter end")
+
+def parse_dt(dt_obj):
+    dt_ret = {
+        ROOT_LIST_KEY : []
+    }
+    key = None
+
+    sons = dt_obj.children
+    try:
+        while True:
+            nt = sons.next()
+            if nt.name == 'a':
+                tmp_l.update(nt.attrs)
+                tmp_l['string'] = nt.string
+                return [tmp_l]
+            elif nt.name == 'h3':
+                key = nt.string if nt.string else "folder_name_is_null"
+                dt_ret[key] = {}
+            elif nt.name == 'dl':
+                # parse_dl返回一个字典
+                ret[key] = parse_dl(nt)
+
+    except StopIteration:
+        logger.info("body iter end")
