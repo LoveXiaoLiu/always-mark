@@ -74,7 +74,7 @@ def run(htmlfile):
         # print beautiful_data
         start_into_db(beautiful_data)
 
-    print ret["Bookmarks"]["\u4e66\u7b7e\u680f"]["root_list"]
+    print ret["Bookmarks"][u"书签栏"]["root_list"]
     logger.info("end to parse html file ......")
 
 def start_into_db(beautiful_data):
