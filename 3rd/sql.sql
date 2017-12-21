@@ -26,6 +26,7 @@ CREATE TABLE `url_detail` (
   `tag_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `url` varchar(2048) NOT NULL,
+  `icon` varchar(4096) NOT NULL,
   `create_date` datetime DEFAULT CURRENT_TIMESTAMP,
   `access_times` varchar(20) NOT NULL,
   `description` longtext NOT NULL,

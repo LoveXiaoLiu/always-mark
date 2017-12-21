@@ -20,9 +20,10 @@ class UrlDetail(models.Model):
     class Meta:
         db_table = 'url_detail'
 
-    rag_id = models.ForeignKey(MarkTag)
+    tag_id = models.ForeignKey(MarkTag)
     name = models.CharField(max_length=255)
     url = models.CharField(max_length=2048)
+    icon = models.CharField(max_length=4096)
     create_date = models.DateTimeField(auto_now_add=True)
     access_times = models.IntegerField(max_length=20)
     description = models.TextField()

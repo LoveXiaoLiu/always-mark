@@ -42,6 +42,7 @@ class Command(BaseCommand):
 
 def run(htmlfile):
     logger.info("start to parse html file ......")
+    ret = {}
     bs_obj = None
     with open(htmlfile, 'r') as fhandle:
         bs_obj = BeautifulSoup(fhandle, PARSE_ENGINE)
@@ -52,7 +53,6 @@ def run(htmlfile):
 
         sons = body.children
 
-        ret = {}
         key = "Bookmarks"
         try:
             while True:
@@ -69,8 +69,36 @@ def run(htmlfile):
         except StopIteration:
             logger.info("body iter end")
 
-    print ret
+    if ret:
+        beautiful_data = sort_out_data(ret)
+        print beautiful_data
+        start_into_db(beautiful_data)
+
+    # print ret
     logger.info("end to parse html file ......")
+
+def start_into_db(beautiful_data):
+    pass
+
+def sort_out_data(origin_data):
+    ret = {}
+    for k, v in origin_data.items():
+        if not v:
+            continue
+
+        if k == "Bookmarks":
+            sod = sort_out_data(v)
+            ret.update(sod)
+
+        for tag, urls in v.items():
+            if tag == ROOT_LIST_KEY:
+                ret[k] = urls
+            else:
+                sod = sort_out_data({tag : urls})
+                ret.update(sod)
+
+    return ret
+
 
 def parse_dl(dl_obj):
     dl_ret = {
