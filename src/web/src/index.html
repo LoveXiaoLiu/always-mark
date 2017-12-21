@@ -49,7 +49,9 @@
         <div class="container-fluid">
             <div class="col-md-2">
                 <ul class="nav nav-pills nav-stacked" ng-repeat="lab in labs">
-                    <li role="presentation"><a href="#{{lab}}">{{lab}}</a></li>
+                    <li role="presentation">
+                        <a href="#{{lab}}" ng-click="getTagUrls(lab)">{{lab}}</a>
+                    </li>
                 </ul>
             </div> <!-- tag标签页 -->
             <div class="col-md-10">
