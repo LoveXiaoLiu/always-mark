@@ -34,7 +34,7 @@ class Command(BaseCommand):
 
         if pid_file:
             with open(pid_file, 'a') as f:
-                f.write('%d\n', % (os.getpid()))
+                f.write('%d\n' % os.getpid())
 
         if htmlfile:
             run(htmlfile)
