@@ -22,3 +22,20 @@ def get_tags(request):
 
     ret = {'status': 200, 'result': result, 'message': 'success'}
     return Response(ret)
+
+@api_view({'GET'})
+@renderer_classes((JSONRenderer, ))
+def get_urls(request, tag_name):
+    result = {}
+
+    try:
+        tq_obj = MarkTag.objects.get(tag_name=tag_name)
+        uq_obj = UrlDetail.objects.filter(tag=tq_obj).values()
+
+        result[tag_name] = uq_obj
+
+    except Exception, e:
+        print "except reson", e
+
+    ret = {'status': 200, 'result': result, 'message': 'success'}
+    return Response(ret)
