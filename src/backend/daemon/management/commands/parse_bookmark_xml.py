@@ -14,6 +14,7 @@ from django.core.management.base import BaseCommand
 
 logger = getLogger("default")
 
+reload(sys)
 sys.setdefaultencoding('utf-8') 
 
 PARSE_ENGINE = "html5lib"
