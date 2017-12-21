@@ -74,7 +74,7 @@ def run(htmlfile):
         # print beautiful_data
         start_into_db(beautiful_data)
 
-    print ret
+    print ret["Bookmarks"]["\u4e66\u7b7e\u680f"]["root_list"]
     logger.info("end to parse html file ......")
 
 def start_into_db(beautiful_data):
@@ -111,9 +111,10 @@ def parse_dl(dl_obj):
             if nt.name == 'dt':
                 # 返回两种类型，list or dict
                 dt_data = parse_dt(nt)
+                print dt_data
                 if isinstance(dt_data, list):
                     dl_ret[ROOT_LIST_KEY] = dl_ret[ROOT_LIST_KEY] + dt_data
-                    continue
+
                 elif isinstance(dt_data, dict):
                     dl_ret.update(dt_data)
 
