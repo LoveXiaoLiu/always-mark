@@ -50,7 +50,7 @@
             <div class="col-md-2">
                 <ul class="nav nav-pills nav-stacked" ng-repeat="lab in labs">
                     <li role="presentation">
-                        <a href="#top" ng-click="getTagUrls(lab)">{{lab}}</a>
+                        <a href="#top" ng-bind="lab" ng-click="getTagUrls(lab)"></a>
                     </li>
                 </ul>
             </div> <!-- tag标签页 -->
