@@ -113,6 +113,7 @@ def parse_dl(dl_obj):
                 dt_data = parse_dt(nt)
                 if isinstance(dt_data, list):
                     dl_ret[ROOT_LIST_KEY] = dl_ret[ROOT_LIST_KEY] + dt_data
+                    continue
                 elif isinstance(dt_data, dict):
                     dl_ret.update(dt_data)
 
