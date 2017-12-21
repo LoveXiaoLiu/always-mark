@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-21 20:38:48
+* @Last Modified time: 2017-12-21 20:43:45
 */
 
 var app = angular.module('myApp', []);
@@ -28,6 +28,8 @@ app.controller('myCtrl', ['$scope', '$http', function($scope, $http){
         4 : "danger",
         5 : "default",
     }
+
+    getTagUrls("常用");
 
     $scope.getTagUrls = function (tag) {
         var geturlurl = '/get_urls/'+ tag + '/'
