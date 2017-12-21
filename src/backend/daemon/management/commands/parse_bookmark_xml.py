@@ -71,10 +71,10 @@ def run(htmlfile):
 
     if ret:
         beautiful_data = sort_out_data(ret)
-        print beautiful_data
+        # print beautiful_data
         start_into_db(beautiful_data)
 
-    # print ret
+    print ret
     logger.info("end to parse html file ......")
 
 def start_into_db(beautiful_data):
@@ -147,7 +147,6 @@ def parse_dt(dt_obj):
             if nt.name == 'dl':
                 # parse_dl返回一个字典
                 dt_ret[key] = parse_dl(nt)
-                continue
 
     except StopIteration:
         logger.info("body iter end")
