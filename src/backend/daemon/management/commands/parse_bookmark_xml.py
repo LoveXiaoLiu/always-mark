@@ -81,8 +81,22 @@ def run(htmlfile):
 
 def start_into_db(beautiful_data):
     for k, v in beautiful_data.items():
-        a = MarkTag(tag_name='lnx')
-        a.save()
+        try:
+            tag_obj = MarkTag(tag_name=k)
+            tag_obj.save()
+
+            for item in v:
+                url_obj = UrlDetail(
+                    tag=tag_obj, 
+                    name=item.get("string", "getisnone"),
+                    url=item.get("href", "getisnone"),
+                    icon=item.get("icon", "getisnone"),
+                    create_date=item.get("add_date", time.time()),
+                )
+                url_obj.save()
+        except Exception, e:
+            print "reson:%s", e
+            print "tag:%s", k
 
 def sort_out_data(origin_data):
     ret = {}
@@ -143,8 +157,8 @@ def parse_dt(dt_obj):
             if nt.name == 'a':
                 tmp_l.update(nt.attrs)
                 tmp_l['string'] = nt.string
-                if tmp_l.has_key('icon'):
-                    del tmp_l['icon']
+                # if tmp_l.has_key('icon'):
+                #     del tmp_l['icon']
                 return [tmp_l]
             
             if nt.name == 'h3':
