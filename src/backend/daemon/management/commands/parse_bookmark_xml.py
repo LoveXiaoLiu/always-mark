@@ -60,7 +60,9 @@ def run(htmlfile):
                 if nt.name == 'h1':
                     key = nt.string if nt.string else key
                     ret[key] = {}
-                elif nt.name == 'dl':
+                    continue
+                
+                if nt.name == 'dl':
                     # parse_dl返回一个字典
                     ret[key] = parse_dl(nt)
 
@@ -68,8 +70,6 @@ def run(htmlfile):
             logger.info("body iter end")
 
     print ret
-
-
     logger.info("end to parse html file ......")
 
 def parse_dl(dl_obj):
@@ -91,6 +91,8 @@ def parse_dl(dl_obj):
     except StopIteration:
         logger.info("body iter end")
 
+    return dl_ret
+
 def parse_dt(dt_obj):
     dt_ret = {
         ROOT_LIST_KEY : []
@@ -106,12 +108,18 @@ def parse_dt(dt_obj):
                 tmp_l.update(nt.attrs)
                 tmp_l['string'] = nt.string
                 return [tmp_l]
-            elif nt.name == 'h3':
+            
+            if nt.name == 'h3':
                 key = nt.string if nt.string else "folder_name_is_null"
                 dt_ret[key] = {}
-            elif nt.name == 'dl':
+                continue
+            
+            if nt.name == 'dl':
                 # parse_dl返回一个字典
                 dt_ret[key] = parse_dl(nt)
+                continue
 
     except StopIteration:
         logger.info("body iter end")
+
+    return dt_ret
