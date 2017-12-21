@@ -17,9 +17,8 @@ ROOT_LIST_KEY = "root_list"
 class Command(BaseCommand):
     """parse html"""
 
-    def __init__(self, arg):
+    def __init__(self):
         super(Command, self).__init__()
-        self.arg = arg
 
     option_list = BaseCommand.option_list + (
             make_option('--htmlfile', dest='htmlfile'),
