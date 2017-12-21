@@ -107,6 +107,8 @@ def parse_dt(dt_obj):
             if nt.name == 'a':
                 tmp_l.update(nt.attrs)
                 tmp_l['string'] = nt.string
+                if tmp_l.has_key('icon'):
+                    del tmp_l['icon']
                 return [tmp_l]
             
             if nt.name == 'h3':
