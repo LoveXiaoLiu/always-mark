@@ -59,7 +59,7 @@ def run(htmlfile):
             while True:
                 nt = sons.next()
                 if nt.name == 'h1':
-                    key = nt.string if nt.string
+                    key = nt.string if nt.string else key
                     ret[key] = {}
                 elif nt.name == 'dl':
                     # parse_dl返回一个字典
