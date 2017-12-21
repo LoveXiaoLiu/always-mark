@@ -3,6 +3,7 @@
 # @Author: caoshuai
 
 import os
+import sys
 import time
 import traceback
 from bs4 import BeautifulSoup
