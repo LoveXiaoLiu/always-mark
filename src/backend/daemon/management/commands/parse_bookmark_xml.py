@@ -86,7 +86,11 @@ def run(htmlfile):
 def start_into_db(beautiful_data):
     for k, v in beautiful_data.items():
         try:
-            print type(k), type(v)
+            # print type(k), type(v)
+            if k == "Bookmarks":
+                continue
+            if k == u"书签栏":
+                k == u"常用"
             tag_obj = MarkTag(tag_name=k)
             tag_obj.save()
 

@@ -9,7 +9,7 @@ class MarkTag(models.Model):
     class Meta:
         db_table = 'tag'
 
-    tag_name = models.CharField(max_length=255)
+    tag_name = models.CharField(max_length=255, unique=True)
     create_date = models.DateTimeField(auto_now_add=True)
     access_times = models.IntegerField(max_length=20, default=0)
     description = models.TextField()
