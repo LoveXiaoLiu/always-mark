@@ -73,7 +73,7 @@ def run(htmlfile):
 
     if ret:
         beautiful_data = sort_out_data(ret)
-        print beautiful_data
+        # print beautiful_data
         start_into_db(beautiful_data)
 
     # print ret["Bookmarks"][u"书签栏"]["root_list"]
@@ -82,6 +82,7 @@ def run(htmlfile):
 def start_into_db(beautiful_data):
     for k, v in beautiful_data.items():
         try:
+            print type(k), type(v)
             tag_obj = MarkTag(tag_name=k)
             tag_obj.save()
 
@@ -95,8 +96,8 @@ def start_into_db(beautiful_data):
                 )
                 url_obj.save()
         except Exception, e:
-            print "reson:%s", e
-            print "tag:%s", k
+            print "reson is:", e
+            print "tag is:", k
 
 def sort_out_data(origin_data):
     ret = {}
