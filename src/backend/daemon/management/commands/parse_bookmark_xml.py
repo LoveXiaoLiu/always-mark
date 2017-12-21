@@ -3,6 +3,7 @@
 # @Author: caoshuai
 
 import os
+import time
 import traceback
 from bs4 import BeautifulSoup
 from logging import getLogger
@@ -121,6 +122,7 @@ def parse_dl(dl_obj):
     except StopIteration:
         logger.info("body iter end")
     print dl_ret
+    time.sleep(10900000)
     return dl_ret
 
 def parse_dt(dt_obj):
