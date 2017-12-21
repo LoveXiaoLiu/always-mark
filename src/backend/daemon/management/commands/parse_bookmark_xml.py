@@ -100,6 +100,7 @@ def parse_dt(dt_obj):
     sons = dt_obj.children
     try:
         while True:
+            tmp_l = {}
             nt = sons.next()
             if nt.name == 'a':
                 tmp_l.update(nt.attrs)
