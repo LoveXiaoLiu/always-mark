@@ -20,7 +20,7 @@ def get_tags(request):
     #     result.append(q.tag_name)
     result = querys
 
-    ret = {'status': 200, 'result': result, 'message': 'success'}
+    ret = {'status': 2000, 'result': result, 'message': 'success'}
     return Response(ret)
 
 @api_view(['GET'])
@@ -37,5 +37,31 @@ def get_urls(request, tag_name):
     except Exception, e:
         print "except reson", e
 
-    ret = {'status': 200, 'result': result, 'message': 'success'}
+    ret = {'status': 2000, 'result': result, 'message': 'success'}
+    return Response(ret)
+
+@api_view(['POST'])
+@renderer_classes((JSONRenderer, ))
+def add_mark(request):
+    status = 6003
+    req = request.DATA
+    message = 'unknow error'
+
+    tag = req.get('tag')
+    name = req.get('name')
+    href = req.get('href')
+    icon = req.get('icon', '0')
+
+    if tag and name and href:
+        try:
+            obj, created = MarkTag.objects.get_or_create(tag_name=tag)
+
+            u_obj = UrlDetail(tag=obj, name=name, url=href, icon=icon)
+            u_obj.save()
+            status = 2000
+            message = 'success'
+        except Exception, e:
+            print "except reson", e
+        
+    ret = {'status': status, 'result': {}, 'message': message}
     return Response(ret)
