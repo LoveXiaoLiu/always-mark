@@ -8,6 +8,7 @@ import traceback
 from bs4 import BeautifulSoup
 from logging import getLogger
 from optparse import make_option
+from showtime.models import MarkTag, UrlDetail
 from django.core.management.base import BaseCommand
 
 logger = getLogger("default")
@@ -79,7 +80,9 @@ def run(htmlfile):
     logger.info("end to parse html file ......")
 
 def start_into_db(beautiful_data):
-    pass
+    for k, v in beautiful_data.items():
+        a = MarkTag(tag_name='lnx')
+        a.save()
 
 def sort_out_data(origin_data):
     ret = {}

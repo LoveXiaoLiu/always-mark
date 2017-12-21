@@ -11,7 +11,7 @@ class MarkTag(models.Model):
 
     tag_name = models.CharField(max_length=255)
     create_date = models.DateTimeField(auto_now_add=True)
-    access_times = models.IntegerField(max_length=20)
+    access_times = models.IntegerField(max_length=20, default=0)
     description = models.TextField()
 
 
@@ -25,6 +25,6 @@ class UrlDetail(models.Model):
     url = models.CharField(max_length=2048)
     icon = models.CharField(max_length=4096)
     create_date = models.DateTimeField(auto_now_add=True)
-    access_times = models.IntegerField(max_length=20)
+    access_times = models.IntegerField(max_length=20, default=0)
     description = models.TextField()
         
