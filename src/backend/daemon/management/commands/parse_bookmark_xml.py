@@ -83,7 +83,7 @@ def start_into_db(beautiful_data):
     for k, v in beautiful_data.items():
         try:
             print type(k), type(v)
-            tag_obj = MarkTag(tag_name=k)
+            tag_obj = MarkTag(tag_name=str(k))
             tag_obj.save()
 
             for item in v:
