@@ -111,7 +111,7 @@ def parse_dt(dt_obj):
                 dt_ret[key] = {}
             elif nt.name == 'dl':
                 # parse_dl返回一个字典
-                ret[key] = parse_dl(nt)
+                dt_ret[key] = parse_dl(nt)
 
     except StopIteration:
         logger.info("body iter end")
