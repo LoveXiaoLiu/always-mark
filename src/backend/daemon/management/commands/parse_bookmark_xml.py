@@ -112,6 +112,7 @@ def parse_dl(dl_obj):
             if nt.name == 'dt':
                 # 返回两种类型，list or dict
                 dt_data = parse_dt(nt)
+
                 if isinstance(dt_data, list):
                     # print dt_data[0]["href"]
                     dl_ret[ROOT_LIST_KEY] = dl_ret[ROOT_LIST_KEY] + dt_data
@@ -121,8 +122,8 @@ def parse_dl(dl_obj):
 
     except StopIteration:
         logger.info("body iter end")
-    print dl_ret
-    time.sleep(10)
+    # print dl_ret
+    # time.sleep(10)
     return dl_ret
 
 def parse_dt(dt_obj):
@@ -146,7 +147,6 @@ def parse_dt(dt_obj):
             if nt.name == 'h3':
                 key = nt.string if nt.string else "folder_name_is_null"
                 dt_ret[key] = {}
-                continue
             
             if nt.name == 'dl':
                 # parse_dl返回一个字典
@@ -154,6 +154,6 @@ def parse_dt(dt_obj):
 
     except StopIteration:
         logger.info("body iter end")
-    print dt_ret
-    time.sleep(10)
+    # print dt_ret
+    # time.sleep(10)
     return dt_ret
