@@ -122,7 +122,7 @@ def parse_dl(dl_obj):
     except StopIteration:
         logger.info("body iter end")
     print dl_ret
-    time.sleep(10900000)
+    time.sleep(10)
     return dl_ret
 
 def parse_dt(dt_obj):
@@ -155,5 +155,5 @@ def parse_dt(dt_obj):
     except StopIteration:
         logger.info("body iter end")
     print dt_ret
-    time.sleep(5)
+    time.sleep(10)
     return dt_ret
