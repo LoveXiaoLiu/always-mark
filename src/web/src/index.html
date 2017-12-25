@@ -5,7 +5,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" />
-    <!-- <link rel="stylesheet" href="css/mycss.css" /> -->
+    <link rel="stylesheet" href="css/mycss.css" />
 </head>
 <body ng-controller="myCtrl" id='top'>
     <div class="mynav">
@@ -47,8 +47,8 @@
         </div><!-- search结束 -->
         <div class="container-fluid">
             <div class="col-md-2 col-xs-6">
-                <ul class="nav nav-pills nav-stacked" ng-repeat="lab in labs">
-                    <li role="presentation">
+                <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation" ng-repeat="lab in labs">
                         <a href="#top" ng-bind="lab" ng-click="getTagUrls(lab)"></a>
                     </li>
                 </ul>
