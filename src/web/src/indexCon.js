@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-25 20:58:18
+* @Last Modified time: 2017-12-25 21:02:35
 */
 
 var app = angular.module('myApp', []);
@@ -10,7 +10,9 @@ var app = angular.module('myApp', []);
 app.controller('myCtrl', ['$scope', '$http', function($scope, $http){
 
     var apiurl = '/get_tags/';
-    console.log(apiurl)
+    console.log(apiurl);
+
+    $scope.active_tag = "常用";
 
     $http({
         url    : apiurl,
