@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-21 21:20:05
+* @Last Modified time: 2017-12-25 20:53:17
 */
 
 var app = angular.module('myApp', []);
@@ -21,7 +21,8 @@ app.controller('myCtrl', ['$scope', '$http', function($scope, $http){
     })
 
 
-    $scope.getTagUrls = function (tag) {
+    $scope.getTagUrls = function ($event, tag) {
+        $($event.target).addClass("active");  
         var geturlurl = '/get_urls/'+ tag + '/'
 
         $http({
@@ -33,8 +34,7 @@ app.controller('myCtrl', ['$scope', '$http', function($scope, $http){
         });
     };
 
-    $scope.getTagUrls("常用");
-
+    // $scope.getTagUrls("常用");
     
     
 }]);
