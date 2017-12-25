@@ -2,12 +2,12 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-25 21:23:58
+* @Last Modified time: 2017-12-25 21:34:25
 */
 
 var app = angular.module('myApp', []);
 
-app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $modal){
+app.controller('myCtrl', ['$scope', '$http', function($scope, $http){
 
     var apiurl = '/get_tags/';
     console.log(apiurl);
