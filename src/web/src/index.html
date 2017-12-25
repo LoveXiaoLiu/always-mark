@@ -10,7 +10,7 @@
 <body ng-controller="myCtrl" id='top'>
     <div class="mynav">
         <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header">
                     <a href="#" class="navbar-brand">
                         <img src="#" alt="便捷书签" />
@@ -24,8 +24,8 @@
         </nav>
     </div> <!-- head结束 -->
 
-    <div class="container">
-        <div class="container">
+    <div class="container-fluid">
+        <div class="container-fluid">
             <div class="row" style="margin-bottom:30px;">
                 <div class="col-md-4 col-md-offset-4">
                     <div class="input-group input-group-lg">
@@ -47,15 +47,15 @@
                 </div>
             </div> --><!-- 标签结束 -->
         </div><!-- search结束 -->
-        <div class="container">
-            <div class="col-md-2">
+        <div class="container-fluid">
+            <div class="col-md-2 col-xs-6">
                 <ul class="nav nav-pills nav-stacked" ng-repeat="lab in labs">
                     <li role="presentation">
                         <a href="#top" ng-bind="lab" ng-click="getTagUrls(lab)"></a>
                     </li>
                 </ul>
             </div> <!-- tag标签页 -->
-            <div class="col-md-10">
+            <div class="col-md-10 col-xs-6">
                 <div ng-repeat="(tag_key, marks_value) in marks">
                     <div ng-repeat="item in marks_value" class="row" id="{{ tag_key }}">
                         <div class="col-md-10 markitem">
@@ -88,7 +88,7 @@
 
     <div>
         <nav class="navbar navbar-default navbar-fixed-bottom">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="col-md-4 col-md-offset-4 copyright">
                     <p><span class="glyphicon glyphicon-copyright-mark"></span> COPYRIGHT GRASS</p>
                 </div>
