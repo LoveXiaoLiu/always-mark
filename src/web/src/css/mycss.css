@@ -1,8 +1,8 @@
 /* 
 * @Author: caoshuai
 * @Date:   2017-09-29 11:51:56
-* @Last Modified by:   caoshuai
-* @Last Modified time: 2017-09-30 17:47:16
+* @Last Modified by:   anchen
+* @Last Modified time: 2017-12-25 21:44:29
 */
 
 a {
@@ -50,5 +50,5 @@ a:hover {
 }
 
 .mynav {
-    height: 60px;
+    /*height: 60px;*/
 }
