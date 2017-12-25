@@ -2,12 +2,12 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-25 21:03:52
+* @Last Modified time: 2017-12-25 21:15:08
 */
 
 var app = angular.module('myApp', []);
 
-app.controller('myCtrl', ['$scope', '$http', function($scope, $http){
+app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $modal){
 
     var apiurl = '/get_tags/';
     console.log(apiurl);
@@ -38,6 +38,23 @@ app.controller('myCtrl', ['$scope', '$http', function($scope, $http){
     };
 
     $scope.getTagUrls("常用");
+
+    $scope.addMark = function () {
+        var modal_add = $modal.open({
+            templateUrl : 'addmarks.html',
+            controller  : 'addmarksController',
+            windowsClass: 'iniform-modal-window',
+            scope       : $scope,
+            size        : 'lg',
+            keyboard    : true
+        });
+
+        $scope.modal_add = modal_add
+    };
     
+    
+}]);
+
+app.controller('addmarksController', ['$scope', '$http', function($scope, $http){
     
 }]);
