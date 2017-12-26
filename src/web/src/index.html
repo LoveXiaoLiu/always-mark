@@ -96,30 +96,31 @@
             </div>
         </nav>
     </div><!-- bottom结束 -->
+
+    <!-- bootstrap.min.js depends jquery.min.js -->
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="js/angular-1.3.0.js"></script> -->
+    <script src="https://cdn.bootcss.com/angular.js/1.3.0/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular-ui-bootstrap/0.7.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="indexCon.js"></script>
+    <!-- 先加载angularjs 再加载ui插件 再加载自己的js -->
+    <script type="text/ng-template" id="addmarks.html">
+        <div class="modal-header" style="background-color:#fff;border-radius:5px;width:598px;">
+            <h4>
+                <span>添加书签</span>
+            </h4>
+        </div>
+        <div class="modal-body" style="width:600px;padding:20px 0px;">
+            <div class="container" style="width:570px;">
+                <span>待续......</span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary btn-xs" style="margin-right:35px;" ng-click="cancel()">取消</button>
+            <button class="btn btn-primary btn-xs" style="margin-right:240px;" ng-click="ok()">确定</button>
+        </div>
+    </script>
     
 </body>
-<!-- bootstrap.min.js depends jquery.min.js -->
-<!-- <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-<!-- <script src="js/angular-1.3.0.js"></script> -->
-<script src="https://cdn.bootcss.com/angular.js/1.3.0/angular.min.js"></script>
-<script src="https://cdn.bootcss.com/angular-ui-bootstrap/0.7.0/ui-bootstrap-tpls.min.js"></script>
-<script src="indexCon.js"></script>
-<!-- 先加载angularjs 再加载ui插件 再加载自己的js -->
-<script type="text/ng-template" id="addmarks.html">
-    <div class="modal-header" style="background-color:#fff;border-radius:5px;width:598px;">
-        <h4>
-            <span>添加书签</span>
-        </h4>
-    </div>
-    <div class="modal-body" style="width:600px;padding:20px 0px;">
-        <div class="container" style="width:570px;">
-            <span>待续......</span>
-        </div>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary btn-xs" style="margin-right:35px;" ng-click="cancel()">取消</button>
-        <button class="btn btn-primary btn-xs" style="margin-right:240px;" ng-click="ok()">确定</button>
-    </div>
-</script>
 </html>
