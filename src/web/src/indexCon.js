@@ -43,10 +43,6 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
         var modal_add = $modal.open({
             templateUrl : 'addmarks.html',
             controller  : 'addmarksController',
-            windowsClass: 'iniform-modal-window',
-            scope       : $scope,
-            size        : 'lg',
-            keyboard    : true
         });
 
         $scope.modal_add = modal_add
