@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-26 21:16:36
+* @Last Modified time: 2017-12-26 21:28:12
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -55,6 +55,6 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
     
 }]);
 
-app.controller('addmarksController', ['$scope', '$http', function($scope, $http){
-
+app.controller('addmarksController', ['$scope', '$modalInstance', '$http', function($scope, $modalInstance, $http){
+    
 }]);
