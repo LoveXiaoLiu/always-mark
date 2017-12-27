@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-27 19:21:01
+* @Last Modified time: 2017-12-27 20:43:35
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);

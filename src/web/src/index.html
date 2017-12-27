@@ -4,8 +4,8 @@
     <title>便捷书签</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css" />
-    <!-- <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css" /> -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/mycss.css" />
 </head>
 <body ng-controller="myCtrl" id='top'>
@@ -104,9 +104,10 @@
     <!-- <script src="js/angular-1.3.0.js"></script> -->
     <script src="https://cdn.bootcss.com/angular.js/1.3.0/angular.min.js"></script>
     <script src="https://cdn.bootcss.com/angular-ui-bootstrap/0.7.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="indexCon.js"></script>
     <!-- 先加载angularjs 再加载ui插件 再加载自己的js -->
-    <!-- <script type="text/ng-template" id="addmarks.html">
+    <script type="text/ng-template" id="addmarks.html">
         <div class="modal-header" style="background-color:#fff;border-radius:5px;width:598px;">
             <h4>
                 <span>添加书签</span>
@@ -120,25 +121,6 @@
         <div class="modal-footer">
             <button class="btn btn-primary btn-xs" style="margin-right:35px;" ng-click="cancel()">取消</button>
             <button class="btn btn-primary btn-xs" style="margin-right:240px;" ng-click="ok()">确定</button>
-        </div>
-    </script> -->
-    <script type="text/ng-template" id="addmarks.html">
-        <div class="modal-header">
-            <h3 class="modal-title">模态框</h3>
-        </div>
-        <div class="modal-body">
-            <ul>
-                <li ng-repeat="item in items">
-                <a ng-click="selected.item = item">{{item}}</a>
-                </li>
-                <div class="h2">当前选择： <b>{{selected.item}}</b></div>
-            </ul>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="ok()">
-            确认
-            </button>
-            <button class="btn btn-warning" ng-click="cancel()">退出</button>
         </div>
     </script>
 </body>
