@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-29 11:51:56
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-27 19:32:02
+* @Last Modified time: 2017-12-27 19:35:32
 */
 
 a {
@@ -55,7 +55,7 @@ a:hover {
 
 .modal-open { overflow: hidden; }
 
-.modal { display: none; overflow: hidden; position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 1050; -webkit-overflow-scrolling: touch; outline: 0; }
+.modal { display: block; overflow: hidden; position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 1050; -webkit-overflow-scrolling: touch; outline: 0; }
 
 .modal.fade .modal-dialog { -webkit-transform: translate(0, -25%); -ms-transform: translate(0, -25%); -o-transform: translate(0, -25%); transform: translate(0, -25%); -webkit-transition: -webkit-transform 0.3s ease-out; -moz-transition: -moz-transform 0.3s ease-out; -o-transition: -o-transform 0.3s ease-out; transition: transform 0.3s ease-out; }
 
