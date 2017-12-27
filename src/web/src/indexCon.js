@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-26 21:28:56
+* @Last Modified time: 2017-12-27 19:01:53
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -43,14 +43,20 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
         var modal_add = $modal.open({
             templateUrl : 'addmarks.html',
             controller  : 'addmarksController',
+            windowClass : 'omais-inform-modal-window',
+            resolve     : {
+                    cs : function () {
+                        return {};
+                    }
+                }
         });
 
-        $scope.modal_add = modal_add
+        // $scope.modal_add = modal_add
     };
     
     
 }]);
 
-app.controller('addmarksController', ['$scope', '$modalInstance', '$http', function($scope, $modalInstance, $http){
+app.controller('addmarksController', ['$scope', '$modalInstance', '$http', 'cs', function($scope, $modalInstance, $http, cs){
     console.log("==================");
 }]);
