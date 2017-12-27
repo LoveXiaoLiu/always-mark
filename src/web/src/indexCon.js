@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-27 19:04:26
+* @Last Modified time: 2017-12-27 19:21:01
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -44,6 +44,7 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
             templateUrl : 'addmarks.html',
             controller  : 'addmarksController',
             windowClass : 'omais-inform-modal-window',
+            size:'sm',
             resolve     : {
                 cs : function () {
                     return {};
@@ -51,7 +52,11 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
             }
         });
 
-        // $scope.modal_add = modal_add
+        modal_add.result.then(function(selectedItem) {
+            console.log("1111111111");
+        }, function() {
+            console.log("2222222222");
+        });
     };
     
     
