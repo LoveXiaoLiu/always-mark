@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-29 11:51:56
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-27 19:47:16
+* @Last Modified time: 2017-12-27 19:57:18
 */
 
 a {
@@ -54,7 +54,8 @@ a:hover {
 }
 
 .modal-open {
-  overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .modal {
   position: fixed;
@@ -63,7 +64,7 @@ a:hover {
   bottom: 0;
   left: 0;
   z-index: 1050;
-  display: none;
+  display: block;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   outline: 0;
