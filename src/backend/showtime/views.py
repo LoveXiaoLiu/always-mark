@@ -14,7 +14,7 @@ from showtime.models import MarkTag, UrlDetail
 def get_tags(request):
     result = list()
 
-    querys = MarkTag.objects.values_list('tag_name', flat=True).order_by("-access_times")
+    querys = MarkTag.objects.filter(parent_id__isnull=True).values_list('tag_name', flat=True).order_by("-access_times")
 
     # for q in querys:
     #     result.append(q.tag_name)

@@ -33,3 +33,6 @@ CREATE TABLE `url_detail` (
   PRIMARY KEY (`id`),
   FOREIGN KEY (`tag_id`) REFERENCES `tag` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `tag` ADD COLUMN `parent_id` int(11) NOT NULL DEFAULT NULL;
+ALTER TABLE `tag` ADD FOREIGN KEY (`parent_id`) REFERENCES `tag` (`id`);
