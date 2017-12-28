@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-28 14:08:02
+* @Last Modified time: 2017-12-28 14:15:02
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -83,6 +83,7 @@ app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$win
                     alert("添加失败:" + data.message);
                 } else {
                     alert("添加成功!");
+                    $scope.cancel();
                 };
             }).error(function(data, status, headers, config, statusText){
                 alert("添加失败:" + statusText);
