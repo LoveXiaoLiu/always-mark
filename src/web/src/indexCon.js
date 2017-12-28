@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-28 17:14:27
+* @Last Modified time: 2017-12-28 17:23:22
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -10,17 +10,9 @@ var app = angular.module('myApp', ['ui.bootstrap']);
 app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $modal){
     $scope.labs = '';
     $scope.marks = '';
+    $scope.none_clr = '';
     var apiurl = '/get_tags/';
     console.log(apiurl);
-
-    $scope.colorr = {
-         0 : "primary",
-         1 : "success",
-         2 : "info",
-         3 : "warning",
-         4 : "danger",
-         5 : "default",
-     }
 
     $scope.active_tag = "常用";
 
@@ -115,8 +107,16 @@ app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$win
 
 
 app.filter('random_clr', function() {
-    return function (clr_obj){
-        var r = Math.round(Math.random()*5)
-        return clr_obj[r];
+    var colorr = {
+         0 : "primary",
+         1 : "success",
+         2 : "info",
+         3 : "warning",
+         4 : "danger",
+         5 : "default",
+     }
+    return function (){
+        var r = Math.round(Math.random()*5);
+        return colorr[r];
     };
 });
