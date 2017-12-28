@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-29 11:51:56
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-27 21:05:59
+* @Last Modified time: 2017-12-28 15:53:10
 */
 
 a {
@@ -22,10 +22,10 @@ a:hover {
 }
 
 .markitem {
-    white-space: nowrap;
-    /*word-wrap: break-word;*/
+    /*white-space: nowrap;*/
+    word-wrap: break-word;
     /*word-break: break-all;*/
-    overflow: hidden;
+    /*overflow: hidden;*/
     text-overflow: ellipsis;
     margin-bottom: 10px;
 }
