@@ -2,13 +2,13 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-28 14:20:36
+* @Last Modified time: 2017-12-28 14:45:20
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
 
 app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $modal){
-
+    $scope.labs = '';
     var apiurl = '/get_tags/';
     console.log(apiurl);
 
@@ -43,7 +43,12 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
         var modal_add = $modal.open({
             templateUrl : 'addmarks.html',
             controller  : 'addmarksController',
-            windowClass : 'omais-inform-modal-window'
+            windowClass : 'omais-inform-modal-window',
+            resolve     : {
+                tags : function(){
+                    return $scope.labs;
+                }
+            }
         });
 
         modal_add.result.then(function(){}, function(){
@@ -54,7 +59,9 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
     
 }]);
 
-app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$window', function ($scope, $modalInstance, $http, $window){
+app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$window', 'tags', function ($scope, $modalInstance, $http, $window, tags){
+    $scope.curTags = tags;
+    console.log($scope.curTags);
     $scope.tag = ''
     $scope.name = ''
     $scope.href = ''
