@@ -49,7 +49,7 @@
                     <div ng-repeat="(tag_key, marks_value) in marks">
                         <span ng-repeat="item in marks_value" class="markitem" id="{{ tag_key }}">
                             <span class="btn btn-{{none_clr | random_clr}}" style="margin-top:10px;">
-                                <a href="{{ item.url }}" ng-bind="item.name" target="_blank"></a>
+                                <a style="#ffff" href="{{ item.url }}" ng-bind="item.name" target="_blank"></a>
                             </span>
                         </span>
                     </div>
