@@ -92,8 +92,10 @@
                     <label class="col-md-2 control-label">标签：</label>
                     <div class="col-md-7">
                         <input ng-model="tag" list="curtags" class="form-control" type="text" placeholder="请输入标签...">
-                        <datalist id="curtags" ng-repeat="c_t in curTags">
-                            <option value="c_t"></option>
+                        <datalist id="curtags">
+                            <span ng-repeat="c_t in curTags">
+                                <option value="{{c_t}}"></option>
+                            </span>
                         </datalist>
                     </div>
                 </div>
