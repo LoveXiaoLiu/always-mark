@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-28 13:58:58
+* @Last Modified time: 2017-12-28 14:06:25
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -81,12 +81,12 @@ app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$win
                 data   : data
             }).success(function(data, status){
                 if (data.status != 2000) {
-                    alert("失败" + data.message);
+                    alert("添加失败:" + data.message);
                 } else {
-                    alert("成功");
+                    alert("添加成功!");
                 };
-            }).error(function(data, status){
-                alert("失败" + data);
+            }).error(function(data, status, headers, config, statusText){
+                alert("添加失败:" + statusText);
             });
         };
     };
