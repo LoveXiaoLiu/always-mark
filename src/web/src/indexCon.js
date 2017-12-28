@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-28 14:06:25
+* @Last Modified time: 2017-12-28 14:08:02
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -65,8 +65,7 @@ app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$win
     $scope.add = function () {
         var addurl = '/add_mark/';
 
-        // if ($scope.tag=='' || $scope.name=='' || $scope.href=='') {
-        if (false) {
+        if ($scope.tag=='' || $scope.name=='' || $scope.href=='') {
             alert("参数错误！")
         } else {
             var data = {
