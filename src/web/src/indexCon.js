@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-27 20:43:35
+* @Last Modified time: 2017-12-28 11:26:58
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -44,7 +44,7 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
             templateUrl : 'addmarks.html',
             controller  : 'addmarksController',
             windowClass : 'omais-inform-modal-window',
-            size:'sm',
+            size:'',
             resolve     : {
                 cs : function () {
                     return {};
