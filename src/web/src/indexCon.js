@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-28 14:15:02
+* @Last Modified time: 2017-12-28 14:18:16
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -44,6 +44,10 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
             templateUrl : 'addmarks.html',
             controller  : 'addmarksController',
             windowClass : 'omais-inform-modal-window'
+        });
+
+        modal_add.then(function(){}, function(){
+            $scope.getTagUrls("常用");
         });
     };
     
