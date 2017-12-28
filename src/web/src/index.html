@@ -47,13 +47,11 @@
                 </div> <!-- tag标签页 -->
                 <div class="col-md-10 col-xs-6">
                     <div ng-repeat="(tag_key, marks_value) in marks">
-                        <div ng-repeat="item in marks_value" class="row" id="{{ tag_key }}">
-                            <div class="col-md-10 markitem">
-                                <span class="btn btn-default">
-                                    <a href="{{ item.url }}" ng-bind="item.name" target="_blank"></a>
-                                </span>
-                            </div>
-                        </div>
+                        <span ng-repeat="item in marks_value" class="markitem" id="{{ tag_key }}">
+                            <span class="btn btn-default">
+                                <a href="{{ item.url }}" ng-bind="item.name" target="_blank"></a>
+                            </span>
+                        </span>
                     </div>
                 </div> <!-- bookmarklist -->
             </div>
