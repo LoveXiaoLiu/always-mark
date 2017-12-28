@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-28 13:15:03
+* @Last Modified time: 2017-12-28 13:58:58
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -51,7 +51,43 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
 }]);
 
 app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$window', function ($scope, $modalInstance, $http, $window){
+    $scope.tag = ''
+    $scope.name = ''
+    $scope.href = ''
+
     $scope.cancel = function () {
+        console.log($scope.tag);
+        console.log($scope.name);
+        console.log($scope.href);
         $modalInstance.dismiss('cancel');
+    };
+
+    $scope.add = function () {
+        var addurl = '/add_mark/';
+
+        // if ($scope.tag=='' || $scope.name=='' || $scope.href=='') {
+        if (false) {
+            alert("参数错误！")
+        } else {
+            var data = {
+                tag  : $scope.tag,
+                name : $scope.name,
+                href : $scope.href
+            }
+
+            $http({
+                url    : addurl,
+                method : 'POST',
+                data   : data
+            }).success(function(data, status){
+                if (data.status != 2000) {
+                    alert("失败" + data.message);
+                } else {
+                    alert("成功");
+                };
+            }).error(function(data, status){
+                alert("失败" + data);
+            });
+        };
     };
 }]);

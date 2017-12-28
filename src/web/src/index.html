@@ -114,13 +114,30 @@
             <h4 class="modal-title">添加书签</h4>
         </div>
         <div class="modal-body">
-            <div>
-                <span>待续......</span>
-            </div>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">标签：</label>
+                    <div class="col-md-7">
+                        <input ng-model="tag" class="form-control" type="text" placeholder="请输入标签...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">名称：</label>
+                    <div class="col-md-7">
+                        <input ng-model="name" class="form-control" type="text" placeholder="请输入名称...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">链接：</label>
+                    <div class="col-md-7">
+                        <input ng-model="href" class="form-control" type="text" placeholder="请输入链接...">
+                    </div>
+                </div>
+            </form> 
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary btn-xs" ng-click="cancel()">取消</button>
-            <button class="btn btn-primary btn-xs">确定</button>
+            <button class="btn btn-primary btn-xs" ng-click="add()">确定</button>
         </div>
     </script>
 </body>
