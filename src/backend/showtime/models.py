@@ -13,7 +13,7 @@ class MarkTag(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     access_times = models.IntegerField(max_length=20, default=0)
     description = models.TextField()
-    parent_id = models.ForeignKey(MarkTag)
+    parent_id = models.ForeignKey('self')
 
 
 class UrlDetail(models.Model):
