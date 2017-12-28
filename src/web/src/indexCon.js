@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-28 17:23:22
+* @Last Modified time: 2017-12-28 17:27:00
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -108,7 +108,7 @@ app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$win
 
 app.filter('random_clr', function() {
     var colorr = {
-         0 : "primary",
+         0 : "info",
          1 : "success",
          2 : "info",
          3 : "warning",
