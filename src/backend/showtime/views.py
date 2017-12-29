@@ -19,7 +19,7 @@ def get_tags(request):
 
     n_querys = MarkTag.objects.filter(parent_id__isnull=False)
 
-    for q in querys:root_dict[q.parent.tag_name].append(q.tag_name)
+    for q in n_querys:root_dict[q.parent.tag_name].append(q.tag_name)
 
     for k, v in root_dict:
         result.append({
