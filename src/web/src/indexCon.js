@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-29 17:43:08
+* @Last Modified time: 2017-12-29 17:44:41
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -79,10 +79,10 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
         };
     };
 
-    $scope.auto_sah = function (e) {
+    $scope.auto_sah = function (e, search_str) {
         var keycode = window.event ? e.keyCode : e.which;
         if(keycode==13){
-            $scope.search_url();
+            $scope.search_url(search_str);
         }
     };
     

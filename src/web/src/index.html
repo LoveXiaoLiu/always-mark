@@ -29,7 +29,7 @@
                 <div class="row" style="margin-bottom:30px;">
                     <div class="col-md-4 col-md-offset-4">
                         <div class="input-group input-group-lg">
-                          <input ng-keyup="auto_sah($event)" ng-model="search_str" type="text" class="form-control" placeholder="老铁，点我试试...">
+                          <input ng-keyup="auto_sah($event, search_str)" ng-model="search_str" type="text" class="form-control" placeholder="老铁，点我试试...">
                           <span class="input-group-btn">
                             <button ng-click="search_url(search_str)" class="btn btn-default" type="button"><span class="glyphicon glyphicon-refresh"></span></button>
                           </span>
