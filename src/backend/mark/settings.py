@@ -30,7 +30,7 @@ with open(os.path.join(BASE_DIR, 'config.yaml')) as conf_file:
 SECRET_KEY = '5ji+t^yh$2+71f+6u-a@jwegoick5$j4st33trnu&9&-wq5io_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
