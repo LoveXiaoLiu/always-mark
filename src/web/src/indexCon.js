@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-29 14:47:33
+* @Last Modified time: 2017-12-29 15:19:56
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -62,16 +62,28 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
 }]);
 
 app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$window', 'tags', function ($scope, $modalInstance, $http, $window, tags){
-    $scope.curTags = tags;
-    console.log($scope.curTags);
+    $scope.curTags = '';
+
     $scope.tag = ''
     $scope.name = ''
     $scope.href = ''
+    $scope.pwd = ''
+
+    $http({
+        url : '/get_tags/all/',
+        method : 'GET'
+    }).success(function(data, status, headers, config, statusText){
+        if (data.status !=2000) {
+            console.log("获取所有标签信息失败：" + data.message)
+        } else {
+            $scope.curTags = data.result;
+            console.log("获取所有标签信息成功！")
+        };
+    }).error(function(data, status, headers, config, statusText){
+        console.log("获取所有标签信息失败：" + statusText)
+    });
 
     $scope.cancel = function () {
-        console.log($scope.tag);
-        console.log($scope.name);
-        console.log($scope.href);
         $modalInstance.dismiss('cancel');
     };
 
@@ -84,7 +96,8 @@ app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$win
             var data = {
                 tag  : $scope.tag,
                 name : $scope.name,
-                href : $scope.href
+                href : $scope.href,
+                pwd  : $scope.pwd
             }
 
             $http({

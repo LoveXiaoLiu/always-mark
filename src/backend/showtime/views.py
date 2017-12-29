@@ -1,18 +1,20 @@
 # coding:utf-8
 
-from rest_framework.decorators import api_view, renderer_classes
-from rest_framework.renderers import JSONRenderer
-from rest_framework.response import Response
-
+import collections  # python 有序字典
 from django.shortcuts import render
+from rest_framework.response import Response
+from rest_framework.renderers import JSONRenderer
+from rest_framework.decorators import api_view, renderer_classes
 
+from utils import get_md5
+from mark.settings import config
 from showtime.models import MarkTag, UrlDetail
-
 
 @api_view(['GET'])
 @renderer_classes((JSONRenderer, ))
 def get_tags(request):
     result = list()
+    root_dict = collections.OrderedDict()
 
     r_querys = MarkTag.objects.filter(parent_id__isnull=True).values_list('tag_name', flat=True).order_by("-access_times")
     root_dict = {i:[] for i in r_querys}
@@ -27,12 +29,17 @@ def get_tags(request):
             "son"   : v
         })
 
+    ret = {'status': 2000, 'result': result, 'message': 'success'}
+    return Response(ret)
 
-    # querys = MarkTag.objects.filter(parent_id__isnull=True).values_list('tag_name', flat=True).order_by("-access_times")
+@api_view(['GET'])
+@renderer_classes((JSONRenderer, ))
+def get_all_tags(request):
+    result = list()
 
-    # for q in querys:
-    #     result.append(q.tag_name)
-    # result = querys
+    querys = MarkTag.objects.all().values_list('tag_name', flat=True).order_by("-access_times")
+
+    result = querys
 
     ret = {'status': 2000, 'result': result, 'message': 'success'}
     return Response(ret)
@@ -65,8 +72,9 @@ def add_mark(request):
     name = req.get('name')
     href = req.get('href')
     icon = req.get('icon', '0')
+    pwd = req.get('pwd')
 
-    if tag and name and href:
+    if tag and name and href and pwd and config['OP_PWD'] == get_md5(pwd):
         try:
             obj, created = MarkTag.objects.get_or_create(tag_name=tag)
 
