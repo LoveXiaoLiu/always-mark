@@ -7,4 +7,4 @@ DATABASE:
   HOST    :   39.106.40.97
   PORT    :   3306
 
-OP_PWD = e401a82ba84a1900ea8eb37121e8dfaf
+OP_PWD : e401a82ba84a1900ea8eb37121e8dfaf
