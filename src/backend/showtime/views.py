@@ -75,7 +75,7 @@ def add_mark(request):
     icon = req.get('icon', '0')
     pwd = req.get('pwd')
 
-    if config['OP_PWD'] == get_md5(pwd):
+    if config['OP_PWD'] != get_md5(pwd):
         status = 5001
         message = 'password error!'
         return Response({'status': status, 'result': {}, 'message': message})
