@@ -2,28 +2,46 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-29 17:44:41
+* @Last Modified time: 2017-12-29 18:52:36
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
 
-app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $modal){
+app.controller('myCtrl', ['$scope', '$http', '$modal', '$window', function($scope, $http, $modal, $window){
     $scope.labs = '';
+    $scope.all_tags = '';
     $scope.marks = '';
     $scope.none_clr = '';
-    var apiurl = '/get_tags/';
-    console.log(apiurl);
 
     $scope.active_tag = "常用";
 
-    $http({
-        url    : apiurl,
-        method : 'GET',
-    }).success(function (response, header, config, status) {
-        console.log(response)
-        $scope.labs = response.result;
-    })
+    function root_tag () {
+        $http({
+            url    : '/get_tags/',
+            method : 'GET',
+        }).success(function (response, header, config, status) {
+            $scope.labs = response.result;
+        });
+    };
 
+    function all_tag () {
+        $http({
+            url : '/get_tags/all/',
+            method : 'GET'
+        }).success(function (data, status, headers, config, statusText){
+            if (data.status !=2000) {
+                console.log("获取所有标签信息失败：" + data.message)
+            } else {
+                $scope.all_tags = data.result;
+                console.log("获取所有标签信息成功！")
+            };
+        }).error(function (data, status, headers, config, statusText){
+            console.log("获取所有标签信息失败：" + statusText)
+        });
+    };
+
+    root_tag()
+    all_tag();
 
     $scope.getTagUrls = function (tag) {
         $scope.active_tag = tag;
@@ -47,14 +65,31 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
             controller  : 'addmarksController',
             windowClass : 'omais-inform-modal-window',
             resolve     : {
-                tags : function(){
-                    return $scope.labs;
+                a_tags : function(){
+                    return $scope.all_tags;
                 }
             }
         });
 
         modal_add.result.then(function(){}, function(){
             $scope.getTagUrls("常用");
+        });
+    };
+
+    $scope.modifyMark = function () {
+        var modal_modify = $modal.open({
+            templateUrl : 'modifymarks.html',
+            controller  : 'modifymarksController',
+            windowClass : 'omais-inform-modal-window',
+            resolve     : {
+                m_tags : function(){
+                    return $scope.all_tags;
+                }
+            }
+        });
+
+        modal_modify.result.then(function(){}, function(){
+            $window.location.reload();
         });
     };
 
@@ -88,27 +123,28 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
     
 }]);
 
-app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$window', 'tags', function ($scope, $modalInstance, $http, $window, tags){
-    $scope.curTags = '';
+app.filter('random_clr', function() {
+    var colorr = {
+         0 : "primary",
+         1 : "success",
+         2 : "info",
+         3 : "warning",
+         4 : "danger",
+         5 : "info",
+     }
+    return function (){
+        var r = Math.round(Math.random()*5);
+        return colorr[r];
+    };
+});
+
+app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$window', 'a_tags', function ($scope, $modalInstance, $http, $window, a_tags){
+    $scope.curTags = a_tags;
 
     $scope.tag = ''
     $scope.name = ''
     $scope.href = ''
     $scope.pwd = ''
-
-    $http({
-        url : '/get_tags/all/',
-        method : 'GET'
-    }).success(function (data, status, headers, config, statusText){
-        if (data.status !=2000) {
-            console.log("获取所有标签信息失败：" + data.message)
-        } else {
-            $scope.curTags = data.result;
-            console.log("获取所有标签信息成功！")
-        };
-    }).error(function (data, status, headers, config, statusText){
-        console.log("获取所有标签信息失败：" + statusText)
-    });
 
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
@@ -147,18 +183,10 @@ app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$win
     };
 }]);
 
+app.controller('modifymarksController', ['$scope', '$modalInstance', '$http', '$window', 'm_tags', function ($scope, $modalInstance, $http, $window, m_tags){
+    $scope.curTags = tags;
 
-app.filter('random_clr', function() {
-    var colorr = {
-         0 : "primary",
-         1 : "success",
-         2 : "info",
-         3 : "warning",
-         4 : "danger",
-         5 : "info",
-     }
-    return function (){
-        var r = Math.round(Math.random()*5);
-        return colorr[r];
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
     };
-});
+}]);
