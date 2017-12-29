@@ -67,7 +67,7 @@ def get_urls(request, tag_name):
 def add_mark(request):
     status = 6003
     req = request.DATA
-    message = 'unknow error'
+    message = 'params error!'
 
     tag = req.get('tag')
     name = req.get('name')
@@ -75,7 +75,12 @@ def add_mark(request):
     icon = req.get('icon', '0')
     pwd = req.get('pwd')
 
-    if tag and name and href and pwd and config['OP_PWD'] == get_md5(pwd):
+    if config['OP_PWD'] == get_md5(pwd):
+        status = 5001
+        message = 'password error!'
+        return Response({'status': status, 'result': {}, 'message': message})
+
+    if tag and name and href and pwd:
         try:
             obj, created = MarkTag.objects.get_or_create(tag_name=tag)
 

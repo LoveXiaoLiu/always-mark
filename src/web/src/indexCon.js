@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-29 15:19:56
+* @Last Modified time: 2017-12-29 15:40:05
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -105,11 +105,13 @@ app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$win
                 method : 'POST',
                 data   : data
             }).success(function(data, status){
-                if (data.status != 2000) {
-                    alert("添加失败:" + data.message);
-                } else {
+                if (data.status == 2000) {
                     alert("添加成功!");
                     $scope.cancel();
+                } else if (data.status == 5001) {
+                    alert("添加失败：口令错误！");
+                } else {
+                    alert("添加失败：参数错误！");
                 };
             }).error(function(data, status, headers, config, statusText){
                 alert("添加失败:" + statusText);
