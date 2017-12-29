@@ -29,9 +29,9 @@
                 <div class="row" style="margin-bottom:30px;">
                     <div class="col-md-4 col-md-offset-4">
                         <div class="input-group input-group-lg">
-                          <input type="text" class="form-control" placeholder="Search for...">
+                          <input ng-model="search_str" type="text" class="form-control" placeholder="Search for...">
                           <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">搜一下</button>
+                            <button ng-click="search_url(search_str)" class="btn btn-default" type="button">搜一下</button>
                           </span>
                         </div><!-- /input-group -->
                     </div><!-- /.col-lg-4 -->

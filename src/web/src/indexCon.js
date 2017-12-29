@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-29 15:40:05
+* @Last Modified time: 2017-12-29 17:01:22
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -57,6 +57,23 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
             $scope.getTagUrls("常用");
         });
     };
+
+    $scope.search_url = function (s_str) {
+        var s_url = '/search/' + s_str + '/';
+        $http({
+            url    : s_url,
+            method : 'GET'
+        }).success(function (data, status, headers, config, statusText) {
+            if (data.status == 2000) {
+                console.log("查询成功：" + s_str);
+                $scope.marks = data.result;
+            } else {
+                alert("查询出错：" + data.message);
+            };
+        }).error(function (data, status, headers, config, statusText) {
+            alert("查询出错：" + statusText);
+        });
+    };
     
     
 }]);
@@ -72,14 +89,14 @@ app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$win
     $http({
         url : '/get_tags/all/',
         method : 'GET'
-    }).success(function(data, status, headers, config, statusText){
+    }).success(function (data, status, headers, config, statusText){
         if (data.status !=2000) {
             console.log("获取所有标签信息失败：" + data.message)
         } else {
             $scope.curTags = data.result;
             console.log("获取所有标签信息成功！")
         };
-    }).error(function(data, status, headers, config, statusText){
+    }).error(function (data, status, headers, config, statusText){
         console.log("获取所有标签信息失败：" + statusText)
     });
 
@@ -104,7 +121,7 @@ app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$win
                 url    : addurl,
                 method : 'POST',
                 data   : data
-            }).success(function(data, status){
+            }).success(function (data, status){
                 if (data.status == 2000) {
                     alert("添加成功!");
                     $scope.cancel();
@@ -113,7 +130,7 @@ app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$win
                 } else {
                     alert("添加失败：参数错误！");
                 };
-            }).error(function(data, status, headers, config, statusText){
+            }).error(function (data, status, headers, config, statusText){
                 alert("添加失败:" + statusText);
             });
         };

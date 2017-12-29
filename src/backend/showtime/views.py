@@ -1,5 +1,6 @@
 # coding:utf-8
 
+import re
 import collections  # python 有序字典
 from django.shortcuts import render
 from rest_framework.response import Response
@@ -92,4 +93,27 @@ def add_mark(request):
             print "except reson", e
         
     ret = {'status': status, 'result': {}, 'message': message}
+    return Response(ret)
+
+@api_view(['GET'])
+@renderer_classes((JSONRenderer, ))
+def search_url(request, sah_str):
+    status = 6003
+    message = 'unknow error!'
+    result = {}
+
+    regex = re.compile('\s+')
+
+    try:
+        s_list = regex.split(sah_str)
+        u_q = UrlDetail.objects.all()
+        for s in s_list:
+            u_q = u_q.filter(name__icontains=s)
+
+        result["searchList"] = u_q.values()
+
+    except Exception, e:
+        print "except reson", e
+
+    ret = {"status":status, "result":result, 'message':message}
     return Response(ret)
