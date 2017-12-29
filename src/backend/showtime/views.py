@@ -21,7 +21,7 @@ def get_tags(request):
 
     for q in n_querys:root_dict[q.parent.tag_name].append(q.tag_name)
 
-    for k, v in root_dict:
+    for k, v in root_dict.items():
         result.append({
             "value" : k,
             "son"   : v
