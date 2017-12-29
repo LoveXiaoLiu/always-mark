@@ -2,13 +2,13 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-28 19:40:39
+* @Last Modified time: 2017-12-29 14:47:33
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
 
 app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $modal){
-    $scope.labs = ["常用", "工具", "设备", "安全", "工具使用教程", "测试", "elasticsearch", "网络", "XSS平台", "uml", "未", "学习", "论坛", "require.js", "渗透工具", "node", "RFS", "jenkins", "架", "AngularJS", "提权", "py", "数据库", "工作", "git", "web", "虚拟机", "lnx", "博客相关"];
+    $scope.labs = '';
     $scope.marks = '';
     $scope.none_clr = '';
     var apiurl = '/get_tags/';

@@ -14,11 +14,25 @@ from showtime.models import MarkTag, UrlDetail
 def get_tags(request):
     result = list()
 
-    querys = MarkTag.objects.filter(parent_id__isnull=True).values_list('tag_name', flat=True).order_by("-access_times")
+    r_querys = MarkTag.objects.filter(parent_id__isnull=True).values_list('tag_name', flat=True).order_by("-access_times")
+    root_dict = {i:[] for i in r_querys}
+
+    n_querys = MarkTag.objects.filter(parent_id__isnull=False)
+
+    for q in querys:root_dict[q.parent.tag_name].append(q.tag_name)
+
+    for k, v in root_dict:
+        result.append({
+            "value" : k,
+            "son"   : v
+        })
+
+
+    # querys = MarkTag.objects.filter(parent_id__isnull=True).values_list('tag_name', flat=True).order_by("-access_times")
 
     # for q in querys:
     #     result.append(q.tag_name)
-    result = querys
+    # result = querys
 
     ret = {'status': 2000, 'result': result, 'message': 'success'}
     return Response(ret)
