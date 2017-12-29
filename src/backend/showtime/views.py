@@ -17,7 +17,8 @@ def get_tags(request):
     root_dict = collections.OrderedDict()
 
     r_querys = MarkTag.objects.filter(parent_id__isnull=True).values_list('tag_name', flat=True).order_by("-access_times")
-    root_dict = {i:[] for i in r_querys}
+
+    for i in r_querys:root_dict[i] = []
 
     n_querys = MarkTag.objects.filter(parent_id__isnull=False)
 
