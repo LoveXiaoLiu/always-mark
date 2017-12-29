@@ -112,6 +112,9 @@ def search_url(request, sah_str):
 
         result["searchList"] = u_q.values()
 
+        status = 2000
+        message = 'success!'
+
     except Exception, e:
         print "except reson", e
 

@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-29 17:01:22
+* @Last Modified time: 2017-12-29 17:31:38
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -59,20 +59,24 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', function($scope, $http, $
     };
 
     $scope.search_url = function (s_str) {
-        var s_url = '/search/' + s_str + '/';
-        $http({
-            url    : s_url,
-            method : 'GET'
-        }).success(function (data, status, headers, config, statusText) {
-            if (data.status == 2000) {
-                console.log("查询成功：" + s_str);
-                $scope.marks = data.result;
-            } else {
-                alert("查询出错：" + data.message);
-            };
-        }).error(function (data, status, headers, config, statusText) {
-            alert("查询出错：" + statusText);
-        });
+        if (s_str == undefined) {
+            alert("请输入查询条件......")
+        } else {
+            var s_url = '/search/' + s_str + '/';
+            $http({
+                url    : s_url,
+                method : 'GET'
+            }).success(function (data, status, headers, config, statusText) {
+                if (data.status == 2000) {
+                    console.log("查询成功：" + s_str);
+                    $scope.marks = data.result;
+                } else {
+                    alert("查询出错：" + data.message);
+                };
+            }).error(function (data, status, headers, config, statusText) {
+                alert("查询出错：" + statusText);
+            });
+        };
     };
     
     
