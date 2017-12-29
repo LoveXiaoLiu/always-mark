@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-29 18:52:36
+* @Last Modified time: 2017-12-29 18:55:43
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -72,7 +72,7 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', '$window', function($scop
         });
 
         modal_add.result.then(function(){}, function(){
-            $scope.getTagUrls("常用");
+            $window.location.reload();
         });
     };
 
@@ -184,7 +184,7 @@ app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$win
 }]);
 
 app.controller('modifymarksController', ['$scope', '$modalInstance', '$http', '$window', 'm_tags', function ($scope, $modalInstance, $http, $window, m_tags){
-    $scope.curTags = tags;
+    $scope.curTags = m_tags;
 
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
