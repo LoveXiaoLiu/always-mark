@@ -31,7 +31,7 @@
                 <div class="row" style="margin-bottom:30px;">
                     <div class="col-md-4 col-md-offset-4">
                         <div class="input-group input-group-lg">
-                          <input ng-keyup="auto_sah($event, search_str)" ng-model="search_str" type="text" class="form-control" placeholder="老铁，点我试试...">
+                          <input ng-keyup="auto_sah($event, search_str)" ng-model="search_str" type="search" class="form-control" placeholder="老铁，点我试试...">
                           <span class="input-group-btn">
                             <button ng-click="search_url(search_str)" class="btn btn-default" type="button"><span class="glyphicon glyphicon-refresh"></span></button>
                           </span>
@@ -138,7 +138,47 @@
             <h4 class="modal-title">修改书签</h4>
         </div>
         <div class="modal-body">
-            <p>待补充......</p>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">父标签：</label>
+                    <div class="col-md-7">
+                        <input ng-model="f_tag" ng-change="get_son(f_tag)" list="ftags" class="form-control" type="text" placeholder="请选择父标签...">
+                        <datalist id="ftags">
+                            <span ng-repeat="tt in curTags">
+                                <option value="{{ tt.value }}"></option>
+                            </span>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">标签：</label>
+                    <div class="col-md-7">
+                        <input ng-model="tag" ng-change="get_tag_url(tag)" list="sontags" class="form-control" type="text" placeholder="请选择标签...">
+                        <datalist id="sontags">
+                            <span ng-repeat="c_t in sonTag">
+                                <option value="{{c_t}}"></option>
+                            </span>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">名称：</label>
+                    <div class="col-md-7">
+                        <input ng-model="m_name" list="nameList" type="text" class="form-control" placeholder="请选择名称...">
+                        <datalist id="nameList">
+                            <span ng-repeat="n in urlmarks">
+                                <option value="{{ n.name }}"></option>
+                            </span>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">链接：</label>
+                    <div class="col-md-7">
+                        <input ng-model="m_url" type="text" class="form-control" placeholder="请选择链接...">
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary btn-xs" ng-click="cancel()">取消</button>
