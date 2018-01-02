@@ -168,7 +168,7 @@
                         <datalist id="nameList">
                             <span ng-repeat="(k, v) in urlmarks">
                                 <span ng-repeat="one_tag in v">
-                                    <option value="{{ one_tag.name }}"></option>
+                                    <option value="{{ one_tag as one_tag.name}}"></option>
                                 </span>
                             </span>
                         </datalist>
