@@ -153,7 +153,7 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label">标签：</label>
                     <div class="col-md-7">
-                        <input ng-model="tag" ng-change="get_tag_url(tag)" list="sontags" class="form-control" type="text" placeholder="请选择标签...">
+                        <input ng-model="tag" ng-change="getTagUrls(tag)" list="sontags" class="form-control" type="text" placeholder="请选择标签...">
                         <datalist id="sontags">
                             <span ng-repeat="c_t in sonTag">
                                 <option value="{{c_t}}"></option>

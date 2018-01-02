@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2018-01-02 20:59:57
+* @Last Modified time: 2018-01-02 21:02:01
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -205,7 +205,7 @@ app.controller('modifymarksController', ['$scope', '$modalInstance', '$http', '$
     $scope.get_son = function (father) {
         for (var i = 0; i < $scope.curTags.length; i++) {
             var tmp = $scope.curTags[i];
-            console.log($scope.curTags[i]);
+            // console.log($scope.curTags[i]);
             if (father == tmp["value"]){
                 $scope.sonTag =  tmp["son"];
                 break;
