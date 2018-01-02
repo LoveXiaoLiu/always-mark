@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-29 18:55:43
+* @Last Modified time: 2018-01-02 17:02:59
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -72,7 +72,7 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', '$window', function($scop
         });
 
         modal_add.result.then(function(){}, function(){
-            $window.location.reload();
+            $scope.getTagUrls("常用");
         });
     };
 
@@ -89,7 +89,7 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', '$window', function($scop
         });
 
         modal_modify.result.then(function(){}, function(){
-            $window.location.reload();
+            $scope.getTagUrls("常用");
         });
     };
 
