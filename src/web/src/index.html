@@ -167,7 +167,9 @@
                         <input ng-model="m_name" list="nameList" type="text" class="form-control" placeholder="请选择名称...">
                         <datalist id="nameList">
                             <span ng-repeat="(k, v) in urlmarks">
-                                <option value="{{ v.name }}"></option>
+                                <span ng-repeat="one_tag in v">
+                                    <option value="{{ one_tag.name }}"></option>
+                                </span>
                             </span>
                         </datalist>
                     </div>
