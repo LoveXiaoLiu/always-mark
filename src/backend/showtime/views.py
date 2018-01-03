@@ -124,4 +124,5 @@ def search_url(request, sah_str):
 @api_view(['POST', 'DELETE'])
 @renderer_classes((JSONRenderer, ))
 def marks(request):
-    print request
+    print request.Method
+    print request.DATA
