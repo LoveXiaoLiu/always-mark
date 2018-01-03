@@ -120,3 +120,8 @@ def search_url(request, sah_str):
 
     ret = {"status":status, "result":result, 'message':message}
     return Response(ret)
+
+@api_view(['POST', 'DELETE'])
+@renderer_classes((JSONRenderer, ))
+def marks(request):
+    print request

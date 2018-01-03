@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2018-01-03 14:03:26
+* @Last Modified time: 2018-01-03 19:19:12
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -198,6 +198,29 @@ app.controller('modifymarksController', ['$scope', '$modalInstance', '$http', '$
         }).success(function (response, header, config, status) {
             console.log(response)
             $scope.urlmarks = response.result[tag];
+        });
+    };
+
+    $scope.modify = function (mhd) {
+        var m_url = '/marks/'
+
+        $http({
+            url    : m_url,
+            method : mhd,
+            data   : {
+                'mark' : $scope.modify_mark,
+                'pwd'  : $scope.pwd
+            }
+        }).success(function (data, status, headers, config, statusText) {
+            if (data.status == 2000) {
+                alert("操作成功！");
+            } else if (data.status == 5001) {
+                alert("操作失败：口令错误！")
+            } else {
+                alert("操作失败：参数错误！")
+            };
+        }).error(function (data, status, headers, config, statusText) {
+            alert("请求接口失败：" + statusText);
         });
     };
 
