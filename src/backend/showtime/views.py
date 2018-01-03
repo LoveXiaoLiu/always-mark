@@ -124,5 +124,31 @@ def search_url(request, sah_str):
 @api_view(['POST', 'DELETE'])
 @renderer_classes((JSONRenderer, ))
 def marks(request):
-    print request.method
-    print request.data
+    status = 6003
+    message = "params error!"
+
+    req = request.DATA
+    pwd = req.get('pwd')
+    mark = req.get('mark')
+
+    if config['OP_PWD'] != get_md5(pwd):
+        status = 5001
+        message = 'password error!'
+        return Response({'status': status, 'result': {}, 'message': message})
+
+    if mark:
+        try:
+            if request.method == 'POST':
+                UrlDetail.objects.filter(id=mark['id']).update(name=mark['name'], url=mark['url'])
+                status = 2000
+                message = "modify row success!"
+            elif request.method == 'DELETE':
+                UrlDetail.objects.get(id=mark['id']).delete()
+                status = 2000
+                message = "delete row success!"
+        except Exception, e:
+            print 'except reson:', e
+
+    ret = {'status':status, 'message':message, 'result':{}}
+
+    return Response(ret)
