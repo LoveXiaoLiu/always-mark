@@ -121,7 +121,7 @@ def search_url(request, sah_str):
     ret = {"status":status, "result":result, 'message':message}
     return Response(ret)
 
-@api_view(['POST', 'DELETE'])
+@api_view(['POST', 'PUT'])
 @renderer_classes((JSONRenderer, ))
 def marks(request):
     status = 6003
@@ -142,7 +142,7 @@ def marks(request):
                 UrlDetail.objects.filter(id=mark['id']).update(name=mark['name'], url=mark['url'])
                 status = 2000
                 message = "modify row success!"
-            elif request.method == 'DELETE':
+            elif request.method == 'PUT':
                 UrlDetail.objects.get(id=mark['id']).delete()
                 status = 2000
                 message = "delete row success!"
