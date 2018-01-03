@@ -2,14 +2,14 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2018-01-03 13:15:26
+* @Last Modified time: 2018-01-03 14:03:26
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
 
 app.controller('myCtrl', ['$scope', '$http', '$modal', '$window', function($scope, $http, $modal, $window){
-    $scope.labs = [{value: "Web", son: ["博客搭建", "AngularJS", "node", "require.js"]}];
-    $scope.all_tags = [1,2,3];
+    $scope.labs = '';
+    $scope.all_tags = '';
     $scope.marks = '';
     $scope.none_clr = '';
 
