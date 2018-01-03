@@ -2,7 +2,7 @@
 * @Author: caoshuai
 * @Date:   2017-09-23 14:05:32
 * @Last Modified by:   anchen
-* @Last Modified time: 2018-01-02 21:02:01
+* @Last Modified time: 2018-01-03 13:15:26
 */
 
 var app = angular.module('myApp', ['ui.bootstrap']);
@@ -84,7 +84,7 @@ app.controller('myCtrl', ['$scope', '$http', '$modal', '$window', function($scop
             resolve     : {
                 m_tags : function(){
                     return {
-                        tags : $scope.labs,
+                        tags : $scope.all_tags,
                         get_tag_url : $scope.getTagUrls,
                     };
                 }
@@ -188,7 +188,6 @@ app.controller('addmarksController', ['$scope', '$modalInstance', '$http', '$win
 
 app.controller('modifymarksController', ['$scope', '$modalInstance', '$http', '$window', 'm_tags', function ($scope, $modalInstance, $http, $window, m_tags){
     $scope.curTags = m_tags.tags;
-    $scope.sonTag = '';
 
     $scope.getTagUrls = function (tag) {
         var geturlurl = '/get_urls/'+ tag + '/'
@@ -198,19 +197,8 @@ app.controller('modifymarksController', ['$scope', '$modalInstance', '$http', '$
             method : 'GET',
         }).success(function (response, header, config, status) {
             console.log(response)
-            $scope.urlmarks = response.result;
+            $scope.urlmarks = response.result[tag];
         });
-    };
-
-    $scope.get_son = function (father) {
-        for (var i = 0; i < $scope.curTags.length; i++) {
-            var tmp = $scope.curTags[i];
-            // console.log($scope.curTags[i]);
-            if (father == tmp["value"]){
-                $scope.sonTag =  tmp["son"];
-                break;
-            }
-        };
     };
 
     $scope.cancel = function () {

@@ -140,39 +140,21 @@
         <div class="modal-body">
             <form class="form-horizontal">
                 <div class="form-group">
-                    <label class="col-md-2 control-label">父标签：</label>
-                    <div class="col-md-7">
-                        <input ng-model="f_tag" ng-change="get_son(f_tag)" list="ftags" class="form-control" type="text" placeholder="请选择父标签...">
-                        <datalist id="ftags">
-                            <span ng-repeat="tt in curTags">
-                                <option value="{{ tt.value }}"></option>
-                            </span>
-                        </datalist>
-                    </div>
-                </div>
-                <div class="form-group">
                     <label class="col-md-2 control-label">标签：</label>
                     <div class="col-md-7">
-                        <input ng-model="tag" ng-change="getTagUrls(tag)" list="sontags" class="form-control" type="text" placeholder="请选择标签...">
-                        <datalist id="sontags">
-                            <span ng-repeat="c_t in sonTag">
-                                <option value="{{c_t}}"></option>
-                            </span>
-                        </datalist>
+                        <select ng-change="getTagUrls(tag)" class="form-control" ng-model="tag" ng-options="t for t in curTags"></select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">名称：</label>
                     <div class="col-md-7">
-                        <span ng-repeat="(k, v) in urlmarks">
-                            <select ng-model="m_name" class="form-control" ng-options="one_tag as one_tag.name for one_tag in v" placeholder="请选择名称..."></select>
-                        </span>
+                        <select ng-model="one_marks" class="form-control" ng-options="one_tag.name for one_tag in urlmarks" placeholder="请选择名称..."></select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">链接：</label>
                     <div class="col-md-7">
-                        <input ng-model="m_url" type="text" class="form-control" placeholder="请选择链接...">
+                        <input ng-bind="one_marks.url" type="text" class="form-control" placeholder="请选择链接...">
                     </div>
                 </div>
             </form>
