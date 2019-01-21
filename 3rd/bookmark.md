@@ -56,7 +56,7 @@
 
 [英语词根词缀大全](http://www.etymon.cn/index.html)
 
-[scikit-learn: machine learning in Python — scikit-learn 0.20.2 documentation](https://scikit-learn.org/stable/index.html)
+[scikit-learn: machine learning in Python](https://scikit-learn.org/stable/index.html)
 
 [Home - Open Source Leader in AI and ML](https://www.h2o.ai/)
 
@@ -72,17 +72,17 @@
 
 [黑客技能表](http://blog.knownsec.com/Knownsec_RD_Checklist/#FMID_1218170279FM)
 
-[黑客是怎样入侵你的网站的 - FreeBuf.COM | 关注黑客与极客](http://www.freebuf.com/articles/web/7359.html#)
+[黑客是怎样入侵你的网站的](http://www.freebuf.com/articles/web/7359.html#)
 
-[黑客如何学起？ - 任晓珲的回答 - 知乎](https://www.zhihu.com/question/20607351/answer/16428402)
+[黑客如何学起？](https://www.zhihu.com/question/20607351/answer/16428402)
 
-[关于web渗透，如何才能迈出关键的一步？ - 网络安全 - 知乎](https://www.zhihu.com/question/48186685)
+[关于web渗透，如何才能迈出关键的一步？](https://www.zhihu.com/question/48186685)
 
-[一次艰难的渗透纪实 - 网站安全 - 红黑联盟](http://www.2cto.com/article/201204/127836.html)
+[一次艰难的渗透纪实 - 网站安全](http://www.2cto.com/article/201204/127836.html)
 
-[内网漫游与知乎某问题引发的经验之谈 - 黑客生活 - 知乎专栏](https://zhuanlan.zhihu.com/p/21573498)
+[内网漫游与知乎某问题引发的经验之谈](https://zhuanlan.zhihu.com/p/21573498)
 
-[BackTrack5圈内非常著名的黑客攻击平台（各种版本） - 『精品软件区』 - 吾爱破解 - LCG - LSG |安卓破解|病毒分析|破解软件|www.52pojie.cn](http://www.52pojie.cn/thread-303339-1-1.html)
+[BackTrack5圈内非常著名的黑客攻击平台（各种版本） - 吾爱破解](http://www.52pojie.cn/thread-303339-1-1.html)
 
 [我是如何截取HTTP与HTTPS并成功得到密码 - Kali中文网](http://www.kali.org.cn/forum.php?mod=viewthread&tid=17944&extra=page%3D1%26filter%3Dtypeid%26typeid%3D32)
 
@@ -92,11 +92,11 @@
 
 [RFC Search](http://www.rfc-editor.org/search/rfc_search.php)
 
-[黑客利器——中国菜刀-鸟哥のlinux-ChinaUnix博客](http://blog.chinaunix.net/uid-25266990-id-2419446.html)
+[黑客利器——中国菜刀](http://blog.chinaunix.net/uid-25266990-id-2419446.html)
 
-[小白如何学习挖掘漏洞 | 滴滴DSRC课程第一期 - SecPulse.COM | 安全脉搏](https://www.secpulse.com/archives/55634.html)
+[小白如何学习挖掘漏洞 | 滴滴DSRC课程第一期](https://www.secpulse.com/archives/55634.html)
 
-[对居然之家的一次超详细内网渗透 – jinglingshu的博客](http://www.jinglingshu.org/?p=8231)
+[对居然之家的一次超详细内网渗透](http://www.jinglingshu.org/?p=8231)
 
 [彩虹表完全参考手册 - 加密解密](http://www.2cto.com/article/201304/202145.html)
 
@@ -109,17 +109,17 @@
 ### 渗透工具
 [Find websites hosted on the same ip - SameIP.org](http://www.sameip.org/)
 
-[chinasofti.com的Whois信息 - 站长工具](http://whois.chinaz.com/)
+[chinasofti.com的Whois信息](http://whois.chinaz.com/)
 
 [WHOIS Search, Domain Name, Website, and IP Tools - Who.is](https://www.who.is/)
 
 [WhatWeb - Next generation web scanner.](https://www.whatweb.net/)
 
-[Kali Linux论坛(Backtrack)_bt3_bt4_bt5-关注无线网络安全、互联网安全动态 - Kali中文网](http://www.kali.org.cn/forum.php)
+[Kali Linux论坛(Backtrack)_bt3_bt4_bt5-关注无线网络安全、互联网安全动态](http://www.kali.org.cn/forum.php)
 
 [Online Password Hash Crack - MD5 NTLM MySQL Wordpress Joomla WPA](https://www.onlinehashcrack.com/)
 
-[[TOP10]十大渗透测试演练系统 - FreeBuf.COM | 关注黑客与极客](http://www.freebuf.com/sectool/4708.html)
+[[TOP10]十大渗透测试演练系统](http://www.freebuf.com/sectool/4708.html)
 
 [漏洞演示系统DVWA攻略_百度文库](https://wenku.baidu.com/view/8ab833745901020207409cd4.html)
 
@@ -144,7 +144,7 @@
 ### 工具使用教程
 [Burp Suite详细使用教程](http://www.freebuf.com/sectool/2079.html)
 
-[SQL注入之DVWA平台测试mysql注入 - 信息安全圈 - 51CTO技术博客](http://hackersec.blog.51cto.com/622295/1251632)
+[SQL注入之DVWA平台测试mysql注入](http://hackersec.blog.51cto.com/622295/1251632)
 
 ### 论坛
 [SSS安全论坛](http://bbs.sssie.com/)
@@ -217,9 +217,7 @@
 
 [RcoIl的窝](http://rcoil.me/)
 
-[安全 - caiqiiqi的博客 - CSDN博客](http://blog.csdn.net/caiqiiqi/article/category/6409223)
-
-[Sublime Text 2 快捷键](http://blog.csdn.net/fovwin/article/details/9102731)
+[安全 - caiqiiqi的博客](http://blog.csdn.net/caiqiiqi/article/category/6409223)
 
 ### 提权
 [mysql的udf提权方法](https://hack0nair.me/2013-05-01-udf-privilege-escalating-on-mysql/)
@@ -247,7 +245,7 @@
 [前端工程 — 基础篇](https://div.io/topic/1275#)
 
 ### JavaScript
-[重新介绍 JavaScript（JS 教程） MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+[重新介绍 JavaScript（JS 教程）](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
 
 [JavaScript 标准参考教程 阮一峰](http://javascript.ruanyifeng.com/)
 
@@ -264,23 +262,23 @@
 
 [001Angular2环境准备](http://www.cnblogs.com/geniushuangxiao/p/6823334.html)
 
-[前端环境的安装与配置 - window24的专栏 - CSDN博客](http://blog.csdn.net/window24/article/details/52539915)
+[前端环境的安装与配置](http://blog.csdn.net/window24/article/details/52539915)
 
-[教你5分钟学会用requirejs(必看篇)_javascript技巧_脚本之家](http://www.jb51.net/article/119496.htm)
+[教你5分钟学会用requirejs(必看篇)_javascript技巧](http://www.jb51.net/article/119496.htm)
 
 ### require.js
-[require.js 入门学习 （share） - 挨踢前端 - 博客园](http://www.cnblogs.com/duanhuajian/archive/2013/01/04/2844151.html)
+[require.js 入门学习 （share）](http://www.cnblogs.com/duanhuajian/archive/2013/01/04/2844151.html)
 
-[Requirejs常用配置和应用 - CSDN博客](http://blog.csdn.net/woxueliuyun/article/details/50481143)
+[Requirejs常用配置和应用](http://blog.csdn.net/woxueliuyun/article/details/50481143)
 
 ### AngularJS
-[[AngularJS] 使用AngularAMD动态加载Controller - Clark159 - 博客园](http://www.cnblogs.com/clark159/p/4706319.html)
+[[AngularJS] 使用AngularAMD动态加载Controller](http://www.cnblogs.com/clark159/p/4706319.html)
 
 [对象模型的细节 - JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Details_of_the_Object_Model)
 
 [AngularJS中$http服务常用的应用及参数](http://www.jb51.net/article/91007.htm)
 
-[angularJS中的事件 - 晚睡早起 - 博客园](https://www.cnblogs.com/freefed/p/4835672.html)
+[angularJS中的事件](https://www.cnblogs.com/freefed/p/4835672.html)
 
 [AngularJS开发环境搭建，出hello word](http://blog.csdn.net/gaowenhui2008/article/details/53672617)
 
@@ -379,9 +377,9 @@
 ## 计算机基础
 [猴子都能懂的GIT入门](https://backlog.com/git-tutorial/cn/)
 
-[字符编码笔记：ASCII，Unicode和UTF-8 阮一峰](http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html)
+[字符编码笔记：ASCII，Unicode和UTF-8](http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html)
 
-[IO 多路复用是什么意思？ - 知乎](https://www.zhihu.com/question/32163005)
+[IO 多路复用是什么意思？](https://www.zhihu.com/question/32163005)
 
 [C语言中的static 详细分析](https://blog.csdn.net/keyeagle/article/details/6708077)
 
@@ -390,6 +388,8 @@
 [程序员的自我修养](https://leohxj.gitbooks.io/a-programmer-prepares/index.html)
 
 [Nginx Location 配置](https://www.codecasts.com/blog/post/nginx-location-configuration)
+
+[Sublime Text 2 快捷键](http://blog.csdn.net/fovwin/article/details/9102731)
 
 ## 架构
 [软件架构详解（附图）](http://blog.csdn.net/u010098331/article/details/51490633)
@@ -410,7 +410,7 @@
 ### elasticsearch
 [【elasticsearch】python下的使用](http://www.cnblogs.com/dplearning/p/5975158.html)
 
-[使用Python操作Elasticsearch数据索引的教程_python](http://www.jb51.net/article/63731.htm)
+[使用Python操作Elasticsearch数据索引的教程](http://www.jb51.net/article/63731.htm)
 
 [Python Elasticsearch api](http://www.cnblogs.com/letong/p/4749234.html)
 
